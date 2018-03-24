@@ -157,7 +157,7 @@
                                                          type="text"><br>
                                         Action P/Max<input class="sheet-item sheet-Action-P-Max"
                                                            name="attr_Action_P_Max" type="text"><br>
-                                        (Total ENC)<input class="sheet-item sheet-Total-ENC" name="attr_Total_ENC"
+                                        Total Lb(s)<input class="sheet-item sheet-Total-Lb" name="attr_Total_Lb"
                                                           type="text">
                                     </div>
                                 </div>
@@ -166,20 +166,20 @@
 
                         <!-- armor and wounds -->
                         <div class="sheet-item">
-                            <h2>Armor and Wounds</h2>
+                            <h2>Armor & Wounds</h2>
                             <div class="sheet-3colrow sheet-AandW">
                                 <div class="sheet-col sheet-left-AandW">
                                     <h3>Head(0)</h3><br>
                                     AR<input class="sheet-item sheet-Head-AR" name="attr_Head_AR" type="text"><br>
-                                    ENC<input class="sheet-item sheet-Head-ENC" name="attr_Head_ENC" type="text"><br>
+                                    Lb(s)<input class="sheet-item sheet-Head-Lb" name="attr_Head_Lb" type="text"><br>
                                     Type<input class="sheet-item sheet-Head-Type" name="attr_Head_Type" type="text"><br>
                                     <h3>Left Arm(8)</h3><br>
                                     AR<input class="sheet-item sheet-Left-Arm-AR" name="attr_Left_Arm_AR" type="text"><br>
-                                    ENC<input class="sheet-item sheet-Left-Arm-ENC" name="attr_Left_Arm_ENC" type="text"><br>
+                                    Lb(s)<input class="sheet-item sheet-Left-Arm-Lb" name="attr_Left_Arm_Lb" type="text"><br>
                                     Type<input class="sheet-item sheet-Left-Arm-Type" name="attr_Left_Arm_Type" type="text"><br>
                                     <h3>Left Leg(6)</h3><br>
                                     AR<input class="sheet-item sheet-Left-Leg-AR" name="attr_Left_Leg_AR" type="text"><br>
-                                    ENC<input class="sheet-item sheet-Left-Leg-ENC" name="attr_Left_Leg_ENC" type="text"><br>
+                                    Lb(s)<input class="sheet-item sheet-Left-Leg-Lb" name="attr_Left_Leg_Lb" type="text"><br>
                                     Type<input class="sheet-item sheet-Left-Leg-Type" name="attr_Left_Leg_Type" type="text"><br>
                                 </div>
                                 <div class="sheet-col sheet-center-AandW">
@@ -188,18 +188,18 @@
                                 <div class="sheet-col sheet-right-AandW">
                                     <h3>Body(1-5)</h3><br>
                                     <input class="sheet-item sheet-Body-AR" name="attr_Body_AR" type="text">AR<br>
-                                    <input class="sheet-item sheet-Body-ENC" name="attr_Body_ENC" type="text">ENC<br>
+                                    <input class="sheet-item sheet-Body-Lb" name="attr_Body_Lb" type="text">Lb(s)<br>
                                     <input class="sheet-item sheet-Body-Type" name="attr_Body_Type" type="text">Type<br>
                                     <h3>Right Arm(9)</h3><br>
                                     <input class="sheet-item sheet-Right-Arm-AR" name="attr_Right_Arm_AR" type="text">AR<br>
-                                    <input class="sheet-item sheet-Right-Arm-ENC" name="attr_Right_Arm_ENC"
-                                              type="text">ENC<br>
+                                    <input class="sheet-item sheet-Right-Arm-Lb" name="attr_Right_Arm_Lb"
+                                              type="text">Lb(s)<br>
                                     <input class="sheet-item sheet-Right-Arm-Type" name="attr_Right_Arm_Type"
                                                type="text">Type<br>
                                     <h3>Right Leg(7)</h3><br>
                                     <input class="sheet-item sheet-Right-Leg-AR" name="attr_Right_Leg_AR" type="text">AR<br>
-                                    <input class="sheet-item sheet-Right-Leg-ENC" name="attr_Right_Leg_ENC"
-                                              type="text">ENC<br>
+                                    <input class="sheet-item sheet-Right-Leg-Lb" name="attr_Right_Leg_Lb"
+                                              type="text">Lb(s)<br>
                                     <input class="sheet-item sheet-Right-Leg-Type" name="attr_Right_Leg_Type"
                                                type="text">Type<br>
                                 </div>
@@ -207,20 +207,196 @@
                         </div><!-- armor and wounds -->
                     </div> <!-- left outer col -->
                     <!-- right outer col -->
-                    <div class="sheet-col">
-
+                    <div class="sheet-col sheet-right-outer">
+                        <h2>Skills & Specializations</h2>
+                        <table>
+                            <tr>
+                                <th><h3>Skill/Spec.</h3></th>
+                                <th><h3>Rank</h3></th>
+                                <th><h3>Bonus</h3></th>
+                                <th><h3>Base TN</h3></th>
+                            </tr>
+                            <tr>
+                                <td>Acrobatics</td>
+                                <td><input class="sheet-item" name="attr_Acrobatics_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Acrobatics_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Acrobatics_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Alchemy</td>
+                                <td><input class="sheet-item" name="attr_Alchemy_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Alchemy_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Alchemy_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Alteration</td>
+                                <td><input class="sheet-item" name="attr_Alteration_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Alteration_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Alteration_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Athletics</td>
+                                <td><input class="sheet-item" name="attr_Athletics_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Athletics_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Athletics_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Command</td>
+                                <td><input class="sheet-item" name="attr_Command_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Command_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Command_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Commerce</td>
+                                <td><input class="sheet-item" name="attr_Commerce_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Commerce_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Commerce_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Conjuration</td>
+                                <td><input class="sheet-item" name="attr_Conjuration_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Conjuration_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Conjuration_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Deceive</td>
+                                <td><input class="sheet-item" name="attr_Decieve_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Decieve_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Decieve_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Destruction</td>
+                                <td><input class="sheet-item" name="attr_Destruction_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Destruction_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Destruction_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Enchant</td>
+                                <td><input class="sheet-item" name="attr_Enchant_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Enchant_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Enchant_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Evade</td>
+                                <td><input class="sheet-item" name="attr_Evade_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Evade_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Evade_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Illusion</td>
+                                <td><input class="sheet-item" name="attr_Illusion_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Illusion_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Illusion_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Investigate</td>
+                                <td><input class="sheet-item" name="attr_Investigate_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Investigate_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Investigate_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Logic</td>
+                                <td><input class="sheet-item" name="attr_Logic_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Logic_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Logic_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Lore</td>
+                                <td><input class="sheet-item" name="attr_Lore_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Lore_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Lore_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Mysticism</td>
+                                <td><input class="sheet-item" name="attr_Mysticism_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Mysticism_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Mysticism_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Navigate</td>
+                                <td><input class="sheet-item" name="attr_Navigate_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Navigate_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Navigate_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Necromancy</td>
+                                <td><input class="sheet-item" name="attr_Necromancy_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Necromancy_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Necromancy_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Observe</td>
+                                <td><input class="sheet-item" name="attr_Observe_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Observe_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Observe_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Persuade</td>
+                                <td><input class="sheet-item" name="attr_Persuade_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Persuade_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Persuade_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Profession</td>
+                                <td><input class="sheet-item" name="attr_Profession_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Profession_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Profession_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Restoration</td>
+                                <td><input class="sheet-item" name="attr_Restoration_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Restoration_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Restoration_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Ride</td>
+                                <td><input class="sheet-item" name="attr_Ride_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Ride_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Ride_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Shehai Shen She Ru</td>
+                                <td><input class="sheet-item" name="attr_Shehai_Shen_She_Ru_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Shehai_Shen_She_Ru_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Shehai_Shen_She_Ru_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Stealth</td>
+                                <td><input class="sheet-item" name="attr_Stealth_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Stealth_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Stealth_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Subterfuge</td>
+                                <td><input class="sheet-item" name="attr_Subterfuge_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Subterfuge_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Subterfuge_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Survival</td>
+                                <td><input class="sheet-item" name="attr_Survival_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Survival_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Survival_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Th'uum</td>
+                                <td><input class="sheet-item" name="attr_Thuum_Rank" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Thuum_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Thuum_Base_TN" type="text"></td>
+                            </tr>
+                        </table>
                     </div> <!-- right outer col -->
                 </div> <!-- outer 2colrow -->
-            </div>
+            </div> <!-- tab 1 -->
             <div class="sheet-tab-content sheet-tab2">
                 consectetur adipiscing elithdfgxdghfhgdfxhxdg
-            </div>
+            </div><!-- tab 2 -->
             <div class="sheet-tab-content sheet-tab3">
                 consectetdsagdfgsgdfsgshftdghjdgtyfhdtgjdtyjtdy xhxdg
-            </div>
+            </div><!-- tab 3 -->
             <div class="sheet-tab-content sheet-tab4">
                 consectetur adipiscssdgdfsghshgerthing elisthdsrthrtshrthtrdhrdthdrthrhdrtthdfgxdghfhgdfxhxdg
-            </div>
+            </div><!-- tab 4 -->
         </div>
 
     </div> <!-- wrapper -->

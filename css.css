@@ -73,6 +73,26 @@ div.sheet-right-AandW h3 {
     text-align: right;
 }
 
+div.sheet-right-outer input {
+    width: 100%;
+    text-align:center;
+}
+
+div.sheet-right-outer td {
+    font-size: 18px;
+}
+
+/*div.sheet-skills-left p {
+    margin: 0 0 0 25px;
+    font-size: 18px;
+    line-height: 22.2px;
+}
+
+div.sheet-skills-right input {
+    width: 33%;
+    line-height: 12px;
+}*/
+
 
 div.sheet-label-grid {
     display: grid;
