@@ -1,8 +1,70 @@
 <script type="text/worker">
+//calculate HP and Stamina Points
 on("change:endurance", function() {
    getAttrs(["endurance"], function(values) {
       setAttrs({
           HP_Max: Math.ceil(values.endurance / 2)
+
+      });
+      setAttrs({
+          Stam_P_Max: Math.floor(values.endurance / 10)
+      });
+   });
+});
+
+//calculate MP
+on("change:intelligence", function() {
+   getAttrs(["intelligence"], function(values) {
+      setAttrs({
+          MP_Max: values.intelligence
+      });
+   });
+});
+
+//calculate Wound Threshold
+on("change:endurance change:strength change:willpower", function() {
+   getAttrs(["endurance", "strength", "willpower"], function(values) {
+      setAttrs({
+          Wound_Thresh: Math.floor(values.endurance / 10) + Math.floor(values.strength / 10) + Math.floor(values.willpower / 10)
+      });
+   });
+});
+
+//calculate Speed
+on("change:strength change:agility", function() {
+   getAttrs(["agility", "strength"], function(values) {
+      setAttrs({
+          Speed: Math.floor(values.strength / 10) + (2 * (Math.floor(values.agility / 10)))
+      });
+   });
+});
+
+//calculate Carry Rating
+on("change:strength change:endurance", function() {
+   getAttrs(["strength", "endurance"], function(values) {
+      setAttrs({
+          Carry_Rating: (6 * (Math.floor(values.strength / 10))) + (3 * (Math.floor(values.endurance / 10)))
+      });
+   });
+});
+
+//calculate Initiative Rating and Action Points
+on("change:agility change:intelligence change:perception", function() {
+   getAttrs(["agility", "intelligence", "perception"], function(values) {
+      setAttrs({
+          Init_Rating: Math.floor(values.agility / 10) + Math.floor(values.intelligence / 10) + Math.floor(values.perception / 10)
+      });
+      setAttrs({
+          Action_P_Max: Math.floor(values.agility / 10) + Math.floor(values.intelligence / 10) + Math.floor(values.perception / 10)
+      });
+   });
+});
+
+//calculate Luck Points
+on("change:luck", function() {
+   getAttrs(["luck"], function(values) {
+      setAttrs({
+          Luck_P_Max: Math.floor(values.luck / 10)
       });
    });
 });
@@ -123,9 +185,9 @@ on("change:endurance", function() {
                                 <input class="sheet-item sheet-stats-ag" name="attr_agility" type="text">
                                 <input class="sheet-item sheet-stats-int" name="attr_intelligence" type="text">
                                 <input class="sheet-item sheet-stats-wp" name="attr_willpower" type="text">
-                                <input class="sheet-item sheet-stats-prc" name="attr_precision" type="text">
-                                <input class="sheet-item sheet-stats-prs" name="attr_perception" type="text">
-                                <input class="sheet-item sheet-stats-lck" name="attr_Luck" type="text">
+                                <input class="sheet-item sheet-stats-prc" name="attr_perception" type="text">
+                                <input class="sheet-item sheet-stats-prs" name="attr_precision" type="text">
+                                <input class="sheet-item sheet-stats-lck" name="attr_luck" type="text">
                             </div>
                             <div class="sheet-item sheet-favored-grid">
                                 <input class="sheet-item sheet-favored-str" name="attr_strength_favored" type="text">
@@ -134,8 +196,8 @@ on("change:endurance", function() {
                                 <input class="sheet-item sheet-favored-int" name="attr_intelligence_favored"
                                        type="text">
                                 <input class="sheet-item sheet-favored-wp" name="attr_willpower_favored" type="text">
-                                <input class="sheet-item sheet-favored-prc" name="attr_precision_favored" type="text">
-                                <input class="sheet-item sheet-favored-prs" name="attr_perception_favored" type="text">
+                                <input class="sheet-item sheet-favored-prc" name="attr_perception_favored" type="text">
+                                <input class="sheet-item sheet-favored-prs" name="attr_precision_favored" type="text">
                                 <div class="sheet-item sheet-label-favored">Favored</div>
                             </div>
                         </div> <!-- grid for primary stats -->
@@ -159,8 +221,8 @@ on("change:endurance", function() {
                                 </div>
                                 <div class="sheet-col">
                                     <div class="sheet-row">
-                                        Magicka P/Max<input class="sheet-item sheet-Magicka-P-Max"
-                                                            name="attr_Magicka_P_Max" type="text"><br>
+                                        Magicka P/Max<input class="sheet-item sheet-MP-Max"
+                                                            name="attr_MP_Max" type="text"><br>
                                         Stam P/Max<input class="sheet-item sheet-Stam-P-Max" name="attr_Stam_P_Max"
                                                          type="text"><br>
                                         Luck P/Max<input class="sheet-item sheet-Luck-P-Max" name="attr_Luck_P_Max"
