@@ -1,0 +1,245 @@
+.charsheet {
+    background-image: url(https://cdn.discordapp.com/attachments/369319272410775563/369319573855535106/PARCHMENT_TEMPLATE.jpg);
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+    font-size: 14px;
+}
+
+h2 {
+    text-align: center;
+    color: #7f0000
+}
+
+h3 {
+    font-size: 16px;
+    color: #7f0000
+}
+
+div.sheet-h1 {
+    text-align: center;
+}
+
+div.sheet-tab-content {
+    display: none;
+}
+
+input.sheet-Name {
+    width: 80%;
+    margin-bottom: 9px;
+}
+
+input.sheet-XP {
+    width: 95%;
+    margin-bottom: 9px;
+}
+
+select {
+    width: 95%;
+}
+
+label {
+    font-size: 14px;
+}
+
+div.sheet-attributes {
+    text-align: right;
+}
+
+div.sheet-attributes input{
+    width: 40%;
+    margin-right: 11px;
+}
+
+div.sheet-AandW input {
+    width: 70%;
+}
+
+div.sheet-left-AandW {
+    text-align: right;
+}
+
+div.sheet-left-AandW h3 {
+    text-align: left;
+}
+
+div.sheet-center-AandW img {
+    margin: 38% 0 0 0;
+}
+
+div.sheet-right-AandW {
+    text-align: left;
+}
+
+div.sheet-right-AandW h3 {
+    text-align: right;
+}
+
+
+div.sheet-label-grid {
+    display: grid;
+    grid-template-columns: 46px 46px 46px 46px 46px 46px 46px 46px;
+    grid-gap: 2px;
+    grid-auto-rows: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+div.sheet-stats-grid {
+    display: grid;
+    grid-template-columns: 46px 46px 46px 46px 46px 46px 46px 46px;
+    grid-gap: 2px;
+    grid-auto-rows: 46px;
+}
+
+div.sheet-stats-grid input {
+    width: 46px;
+    text-align: center;
+}
+
+div.sheet-stats-str {
+    grid-column: 1;
+    grid-row: 1;
+}
+div.sheet-stats-end {
+    grid-column: 2;
+    grid-row: 1;
+}
+div.sheet-stats-ag {
+    grid-column: 3;
+    grid-row: 1;
+}
+div.sheet-stats-int {
+    grid-column: 4;
+    grid-row: 1;
+}
+div.sheet-stats-wp {
+    grid-column: 5;
+    grid-row: 1;
+}
+div.sheet-stats-prc {
+    grid-column: 6;
+    grid-row: 1;
+}
+div.sheet-stats-prs {
+    grid-column: 7;
+    grid-row: 1;
+}
+div.sheet-stats-lck {
+    grid-column: 8;
+    grid-row: 1;
+}
+div.sheet-favored-grid {
+    display: grid;
+    grid-template-columns: 46px 46px 46px 46px 46px 46px 46px 46px;
+    grid-gap: 2px;
+    grid-auto-rows: 23px;
+}
+
+div.sheet-favored-grid input {
+    width: 46px;
+    text-align: center;
+}
+
+div.sheet-favored-str {
+    grid-column: 1;
+    grid-row: 1;
+}
+div.sheet-favored-end {
+    grid-column: 2;
+    grid-row: 1;
+}
+div.sheet-favored-ag {
+    grid-column: 3;
+    grid-row: 1;
+}
+div.sheet-favored-int {
+    grid-column: 4;
+    grid-row: 1;
+}
+div.sheet-favored-wp {
+    grid-column: 5;
+    grid-row: 1;
+}
+div.sheet-favored-prc {
+    grid-column: 6;
+    grid-row: 1;
+}
+div.sheet-favored-prs {
+    grid-column: 7;
+    grid-row: 1;
+}
+
+input.sheet-tab1:checked ~ div.sheet-tab1,
+input.sheet-tab2:checked ~ div.sheet-tab2,
+input.sheet-tab3:checked ~ div.sheet-tab3,
+input.sheet-tab4:checked ~ div.sheet-tab4{
+    display: block;
+}
+
+input.sheet-tab {
+    width: 150px;
+    height: 40px;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    margin: -1.5px;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+}
+
+input.sheet-tab + span::before {
+    content: attr(title);
+    border: solid 1px #a8a8a8;
+    border-bottom-color: black;
+    text-align: center;
+    display: inline-block;
+    background: #fff;
+    background: linear-gradient(to top, #ffffff, #fff, #ffffff);
+    width: 150px;
+    height: 20px;
+    font-size: 18px;
+    position: absolute;
+    top: 60px;
+    left: 13px;
+}
+
+input.sheet-tab:checked + span::before {
+    background: #dcdcdc;
+    background: linear-gradient(to top, #ffffff, #dcdcdc, #ffffff);
+    border-bottom-color: #fff;
+}
+
+input.sheet-tab:not(:first-child) + span::before {
+    border-left: none;
+}
+
+input.sheet-tab2 + span::before {
+    background: #fee;
+    background: linear-gradient(to top, #f8c8c8, #fee, #f8c8c8);
+    left: 163px;
+}
+
+input.sheet-tab3 + span::before {
+    background: #fee;
+    background: linear-gradient(to top, #00f0a3, #fee, #00f0a3);
+    left: 313px; }
+
+input.sheet-tab4 + span::before {
+    background: #fee;
+    background: linear-gradient(to top, #58cff8, #fee, #58cff8);
+    left: 463px; }
+
+
+
+input.sheet-tab2:checked + span::before {
+    background: #dcdcdc;
+    background: linear-gradient(to top, #fcecec, #f8c8c8, #fcecec);
+    border-bottom-color: #fcecec;
+}
+
+div.sheet-tab-content {
+    border: 1px solid #a8a8a8;
+    border-top-color: #000;
+    margin: 2px 0 0 5px;
+    padding: 5px;
+}

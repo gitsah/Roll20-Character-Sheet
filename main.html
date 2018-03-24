@@ -1,0 +1,226 @@
+<div class="sheet-characteristics">
+
+    <div class="sheet-wrapper">
+        <div class="sheet-h1"><h1> UESRPG Third Edition Character Sheet</h1></div>
+        <div>
+            <input type="radio" name="attr_tab" class="sheet-tab sheet-tab1" value="1" checked="checked"><span
+                title="General"></span>
+            <input type="radio" name="attr_tab" class="sheet-tab sheet-tab2" value="2"><span
+                title="Equipment"></span>
+            <input type="radio" name="attr_tab" class="sheet-tab sheet-tab3" value="3"><span
+                title="Abilities"></span>
+            <input type="radio" name="attr_tab" class="sheet-tab sheet-tab4" value="4"><span title="Magic"></span>
+            <div class="sheet-tab-content sheet-tab1">
+                <div class="sheet-2colrow">
+                    <!-- left outer col -->
+                    <div class="sheet-col">
+                        <div class="sheet-row">
+                            <div class="sheet-item"><label>Name</label></div>
+                            <div class="sheet-item"><input class="sheet-item sheet-Name" name="attr_Name" type="text">
+                            </div>
+                        </div>
+                        <!-- inner cols for char stats -->
+                        <div class="sheet-2colrow">
+                            <!-- Left Column -->
+                            <div class="sheet-col">
+                                <div class="sheet-row">
+                                    <div class="sheet-item"><label>Experience</label></div>
+                                    <div class="sheet-item"><input class="sheet-item sheet-XP" name="attr_XP"
+                                                                   type="text"></div>
+                                </div>
+                                <div class="sheet-row">
+                                    <div class="sheet-item"><label>Elite Advancement</label></div>
+                                    <div class="sheet-item">
+                                        <select name="attr_EliteAdvancement">
+                                            <option value="None">None</option>
+                                            <option value="Stormvoice">Stormvoice</option>
+                                            <option value="Sword-singer">Sword-singer</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Column -->
+                            <div class="sheet-col">
+                                <div class="sheet-row">
+                                    <div class="sheet-item"><label>Race</label></div>
+                                    <div class="sheet-item">
+                                        <select name="attr_Race">
+                                            <option value="Altmer">Altmer</option>
+                                            <option value="Argonian">Argonian</option>
+                                            <option value="Bosmer">Bosmer</option>
+                                            <option value="Breton">Breton</option>
+                                            <option value="Colovian Imperial">Colovian Imperial</option>
+                                            <option value="Dunmer">Dunmer</option>
+                                            <option value="Khajiit">Khajiit</option>
+                                            <option value="Nibenese Imperial">Nibenese Imperial</option>
+                                            <option value="Nord">Nord</option>
+                                            <option value="Orsimer">Orsimer</option>
+                                            <option value="Redguard">Redguard</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="sheet-row">
+                                    <div class="sheet-item"><label>Birthsign</label></div>
+                                    <div class="sheet-item">
+                                        <select name="attr_Birthsign">
+                                            <option value="The Warrior">The Warrior</option>
+                                            <option value="Star-Cursed Warrior">Star-Cursed Warrior</option>
+                                            <option value="The Lady">The Lady</option>
+                                            <option value="Star-Cursed Lady">Star-Cursed Lady</option>
+                                            <option value="The Steed">The Steed</option>
+                                            <option value="Star-Cursed Speed">Star-Cursed Lady</option>
+                                            <option value="The Lord">The Lord</option>
+                                            <option value="Star-Cursed Lord">Star-Cursed Lord</option>
+                                            <option value="The Mage">The Mage</option>
+                                            <option value="Star-Cursed Mage">Star-Cursed Mage</option>
+                                            <option value="The Apprentice">The Apprentice</option>
+                                            <option value="Star-Cursed Apprentice">Star-Cursed Apprentice</option>
+                                            <option value="The Atronach">The Atronach</option>
+                                            <option value="Star-Cursed Atronach">Star-Cursed Atronach</option>
+                                            <option value="The Ritual">The Ritual</option>
+                                            <option value="Star-Cursed Ritual">Star-Cursed Ritual</option>
+                                            <option value="The Thief">The Thief</option>
+                                            <option value="Star-Cursed Thief">Star-Cursed Thief</option>
+                                            <option value="The Lover">The Lover</option>
+                                            <option value="Star-Cursed Lover">Star-Cursed Lover</option>
+                                            <option value="The Shadow">The Shadow</option>
+                                            <option value="Star-Cursed Shadow">Star-Cursed Shadow</option>
+                                            <option value="The Tower">The Tower</option>
+                                            <option value="Star-Cursed Tower">Star-Cursed Tower</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- inner cols for char stats -->
+
+                        <!-- grid for primary stats -->
+                        <div class="sheet-item">
+                            <div class="sheet-item sheet-label-grid">
+                                <div class="sheet-item sheet-label-str">Str</div>
+                                <div class="sheet-item sheet-label-end">End</div>
+                                <div class="sheet-item sheet-label-ag">Ag</div>
+                                <div class="sheet-item sheet-label-int">Int</div>
+                                <div class="sheet-item sheet-label-wp">Wp</div>
+                                <div class="sheet-item sheet-label-prc">Prc</div>
+                                <div class="sheet-item sheet-label-prs">Prs</div>
+                                <div class="sheet-item sheet-label-lck">Lck</div>
+                            </div>
+                            <div class="sheet-item sheet-stats-grid">
+                                <input class="sheet-item sheet-stats-str" name="attr_strength" type="text">
+                                <input class="sheet-item sheet-stats-end" name="attr_endurance" type="text">
+                                <input class="sheet-item sheet-stats-ag" name="attr_agility" type="text">
+                                <input class="sheet-item sheet-stats-int" name="attr_intelligence" type="text">
+                                <input class="sheet-item sheet-stats-wp" name="attr_willpower" type="text">
+                                <input class="sheet-item sheet-stats-prc" name="attr_precision" type="text">
+                                <input class="sheet-item sheet-stats-prs" name="attr_perception" type="text">
+                                <input class="sheet-item sheet-stats-lck" name="attr_Luck" type="text">
+                            </div>
+                            <div class="sheet-item sheet-favored-grid">
+                                <input class="sheet-item sheet-favored-str" name="attr_strength_favored" type="text">
+                                <input class="sheet-item sheet-favored-end" name="attr_endurance_favored" type="text">
+                                <input class="sheet-item sheet-favored-ag" name="attr_agility_favored" type="text">
+                                <input class="sheet-item sheet-favored-int" name="attr_intelligence_favored"
+                                       type="text">
+                                <input class="sheet-item sheet-favored-wp" name="attr_willpower_favored" type="text">
+                                <input class="sheet-item sheet-favored-prc" name="attr_precision_favored" type="text">
+                                <input class="sheet-item sheet-favored-prs" name="attr_perception_favored" type="text">
+                                <div class="sheet-item sheet-label-favored">Favored</div>
+                            </div>
+                        </div> <!-- grid for primary stats -->
+                        <!-- attributes -->
+                        <div class="sheet-item">
+                            <h2>Attributes</h2>
+                            <div class="sheet-2colrow sheet-attributes">
+                                <div class="sheet-col">
+                                    <div class="sheet-row">
+                                        Health P/Max<input class="sheet-item sheet-HP-Max" name="attr_HP_Max"
+                                                           type="text"><br>
+                                        Wound Thresh.<input class="sheet-item sheet-Wound-Thresh"
+                                                            name="attr_Wound_Thresh" type="text"><br>
+                                        Speed<input class="sheet-item sheet-Speed" name="attr_Speed" type="text"><br>
+                                        Init. Rating<input class="sheet-item sheet-Init-Rating" name="attr_Init_Rating"
+                                                           type="text"><br>
+                                        Carry Rating<input class="sheet-item sheet-Carry-Rating"
+                                                           name="attr_Carry_Rating" type="text">
+                                    </div>
+
+                                </div>
+                                <div class="sheet-col">
+                                    <div class="sheet-row">
+                                        Magicka P/Max<input class="sheet-item sheet-Magicka-P-Max"
+                                                            name="attr_Magicka_P_Max" type="text"><br>
+                                        Stam P/Max<input class="sheet-item sheet-Stam-P-Max" name="attr_Stam_P_Max"
+                                                         type="text"><br>
+                                        Luck P/Max<input class="sheet-item sheet-Luck-P-Max" name="attr_Luck_P_Max"
+                                                         type="text"><br>
+                                        Action P/Max<input class="sheet-item sheet-Action-P-Max"
+                                                           name="attr_Action_P_Max" type="text"><br>
+                                        (Total ENC)<input class="sheet-item sheet-Total-ENC" name="attr_Total_ENC"
+                                                          type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- attributes -->
+
+                        <!-- armor and wounds -->
+                        <div class="sheet-item">
+                            <h2>Armor and Wounds</h2>
+                            <div class="sheet-3colrow sheet-AandW">
+                                <div class="sheet-col sheet-left-AandW">
+                                    <h3>Head(0)</h3><br>
+                                    AR<input class="sheet-item sheet-Head-AR" name="attr_Head_AR" type="text"><br>
+                                    ENC<input class="sheet-item sheet-Head-ENC" name="attr_Head_ENC" type="text"><br>
+                                    Type<input class="sheet-item sheet-Head-Type" name="attr_Head_Type" type="text"><br>
+                                    <h3>Right Arm(8)</h3><br>
+                                    AR<input class="sheet-item sheet-Right-Arm-AR" name="attr_Right_Arm_AR" type="text"><br>
+                                    ENC<input class="sheet-item sheet-Right-Arm-ENC" name="attr_Right_Arm_ENC"
+                                              type="text"><br>
+                                    Type<input class="sheet-item sheet-Right-Arm-Type" name="attr_Right_Arm_Type"
+                                               type="text"><br>
+                                    <h3>Right Leg(6)</h3><br>
+                                    AR<input class="sheet-item sheet-Right-Leg-AR" name="attr_Right_Leg_AR" type="text"><br>
+                                    ENC<input class="sheet-item sheet-Right-Leg-ENC" name="attr_Right_Leg_ENC"
+                                              type="text"><br>
+                                    Type<input class="sheet-item sheet-Right-Leg-Type" name="attr_Right_Leg_Type"
+                                               type="text"><br>
+                                </div>
+                                <div class="sheet-col sheet-center-AandW">
+                                    <img src="https://i.imgur.com/UbrLS91.png" alt="power"/>
+                                </div>
+                                <div class="sheet-col sheet-right-AandW">
+                                    <h3>Body(1-5)</h3><br>
+                                    <input class="sheet-item sheet-Body-AR" name="attr_Body_AR" type="text">AR<br>
+                                    <input class="sheet-item sheet-Body-ENC" name="attr_Body_ENC" type="text">ENC<br>
+                                    <input class="sheet-item sheet-Body-Type" name="attr_Body_Type" type="text">Type<br>
+                                    <h3>Left Arm(9)</h3><br>
+                                    <input class="sheet-item sheet-Left-Arm-AR" name="attr_Left_Arm_AR" type="text">AR<br>
+                                    <input class="sheet-item sheet-Left-Arm-ENC" name="attr_Left_Arm_ENC" type="text">ENC<br>
+                                    <input class="sheet-item sheet-Left-Arm-Type" name="attr_Left_Arm_Type" type="text">Type<br>
+                                    <h3>Left Leg(7)</h3><br>
+                                    <input class="sheet-item sheet-Left-Leg-AR" name="attr_Left_Leg_AR" type="text">AR<br>
+                                    <input class="sheet-item sheet-Left-Leg-ENC" name="attr_Left_Leg_ENC" type="text">ENC<br>
+                                    <input class="sheet-item sheet-Left-Leg-Type" name="attr_Left_Leg_Type" type="text">Type<br>
+                                </div>
+                            </div>
+                        </div><!-- armor and wounds -->
+                    </div> <!-- left outer col -->
+                    <!-- right outer col -->
+                    <div class="sheet-col">
+
+                    </div> <!-- right outer col -->
+                </div> <!-- outer 2colrow -->
+            </div>
+            <div class="sheet-tab-content sheet-tab2">
+                consectetur adipiscing elithdfgxdghfhgdfxhxdg
+            </div>
+            <div class="sheet-tab-content sheet-tab3">
+                consectetdsagdfgsgdfsgshftdghjdgtyfhdtgjdtyjtdy xhxdg
+            </div>
+            <div class="sheet-tab-content sheet-tab4">
+                consectetur adipiscssdgdfsghshgerthing elisthdsrthrtshrthtrdhrdthdrthrhdrtthdfgxdghfhgdfxhxdg
+            </div>
+        </div>
+
+    </div> <!-- wrapper -->
+</div> <!-- characteristics -->
