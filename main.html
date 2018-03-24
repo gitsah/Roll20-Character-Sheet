@@ -1,3 +1,13 @@
+<script type="text/worker">
+on("change:endurance", function() {
+   getAttrs(["endurance"], function(values) {
+      setAttrs({
+          HP_Max: Math.ceil(values.endurance / 2)
+      });
+   });
+});
+
+</script>
 <div class="sheet-characteristics">
 
     <div class="sheet-wrapper">
@@ -174,13 +184,19 @@
                                     Lb(s)<input class="sheet-item sheet-Head-Lb" name="attr_Head_Lb" type="text"><br>
                                     Type<input class="sheet-item sheet-Head-Type" name="attr_Head_Type" type="text"><br>
                                     <h3>Left Arm(8)</h3><br>
-                                    AR<input class="sheet-item sheet-Left-Arm-AR" name="attr_Left_Arm_AR" type="text"><br>
-                                    Lb(s)<input class="sheet-item sheet-Left-Arm-Lb" name="attr_Left_Arm_Lb" type="text"><br>
-                                    Type<input class="sheet-item sheet-Left-Arm-Type" name="attr_Left_Arm_Type" type="text"><br>
+                                    AR<input class="sheet-item sheet-Left-Arm-AR" name="attr_Left_Arm_AR"
+                                             type="text"><br>
+                                    Lb(s)<input class="sheet-item sheet-Left-Arm-Lb" name="attr_Left_Arm_Lb"
+                                                type="text"><br>
+                                    Type<input class="sheet-item sheet-Left-Arm-Type" name="attr_Left_Arm_Type"
+                                               type="text"><br>
                                     <h3>Left Leg(6)</h3><br>
-                                    AR<input class="sheet-item sheet-Left-Leg-AR" name="attr_Left_Leg_AR" type="text"><br>
-                                    Lb(s)<input class="sheet-item sheet-Left-Leg-Lb" name="attr_Left_Leg_Lb" type="text"><br>
-                                    Type<input class="sheet-item sheet-Left-Leg-Type" name="attr_Left_Leg_Type" type="text"><br>
+                                    AR<input class="sheet-item sheet-Left-Leg-AR" name="attr_Left_Leg_AR"
+                                             type="text"><br>
+                                    Lb(s)<input class="sheet-item sheet-Left-Leg-Lb" name="attr_Left_Leg_Lb"
+                                                type="text"><br>
+                                    Type<input class="sheet-item sheet-Left-Leg-Type" name="attr_Left_Leg_Type"
+                                               type="text"><br>
                                 </div>
                                 <div class="sheet-col sheet-center-AandW">
                                     <img src="https://i.imgur.com/qGUrcQT.png" alt="power"/>
@@ -193,15 +209,15 @@
                                     <h3>Right Arm(9)</h3><br>
                                     <input class="sheet-item sheet-Right-Arm-AR" name="attr_Right_Arm_AR" type="text">AR<br>
                                     <input class="sheet-item sheet-Right-Arm-Lb" name="attr_Right_Arm_Lb"
-                                              type="text">Lb(s)<br>
+                                           type="text">Lb(s)<br>
                                     <input class="sheet-item sheet-Right-Arm-Type" name="attr_Right_Arm_Type"
-                                               type="text">Type<br>
+                                           type="text">Type<br>
                                     <h3>Right Leg(7)</h3><br>
                                     <input class="sheet-item sheet-Right-Leg-AR" name="attr_Right_Leg_AR" type="text">AR<br>
                                     <input class="sheet-item sheet-Right-Leg-Lb" name="attr_Right_Leg_Lb"
-                                              type="text">Lb(s)<br>
+                                           type="text">Lb(s)<br>
                                     <input class="sheet-item sheet-Right-Leg-Type" name="attr_Right_Leg_Type"
-                                               type="text">Type<br>
+                                           type="text">Type<br>
                                 </div>
                             </div>
                         </div><!-- armor and wounds -->
