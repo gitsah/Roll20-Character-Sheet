@@ -1,4 +1,57 @@
 <script type="text/worker">
+//calculate favoreds
+on("change:strength_favored", function() {
+   getAttrs(["strength", "strength_favored"], function(values) {
+      setAttrs({
+          strength: Math.floor(values.strength) + Math.floor(values.strength * 0.4 * values.strength_favored)
+      });
+   });
+});
+on("change:endurance_favored", function() {
+   getAttrs(["endurance", "endurance_favored"], function(values) {
+      setAttrs({
+          endurance: Math.floor(values.endurance) + Math.floor(values.endurance * 0.4 * values.endurance_favored)
+      });
+   });
+});
+on("change:agility_favored", function() {
+   getAttrs(["agility", "agility_favored"], function(values) {
+      setAttrs({
+          agility: Math.floor(values.agility) + Math.floor(values.agility * 0.4 * values.agility_favored)
+      });
+   });
+});
+on("change:intelligence_favored", function() {
+   getAttrs(["intelligence", "intelligence_favored"], function(values) {
+      setAttrs({
+          intelligence: Math.floor(values.intelligence) + Math.floor(values.intelligence * 0.4 * values.intelligence_favored)
+      });
+   });
+});
+on("change:willpower_favored", function() {
+   getAttrs(["willpower", "willpower_favored"], function(values) {
+      setAttrs({
+          willpower: Math.floor(values.willpower) + Math.floor(values.willpower * 0.4 * values.willpower_favored)
+      });
+   });
+});
+on("change:perception_favored", function() {
+   getAttrs(["perception", "perception_favored"], function(values) {
+      setAttrs({
+          perception: Math.floor(values.perception) + Math.floor(values.perception * 0.4 * values.perception_favored)
+      });
+   });
+});
+on("change:precision_favored", function() {
+   getAttrs(["precision", "precision_favored"], function(values) {
+      setAttrs({
+          precision: Math.floor(values.precision) + Math.floor(values.precision * 0.4 * values.precision_favored)
+      });
+   });
+});
+
+
+
 //calculate HP and Stamina Points
 on("change:endurance", function() {
    getAttrs(["endurance"], function(values) {
@@ -68,6 +121,7 @@ on("change:luck", function() {
       });
    });
 });
+
 
 </script>
 <div class="sheet-characteristics">
@@ -190,14 +244,14 @@ on("change:luck", function() {
                                 <input class="sheet-item sheet-stats-lck" name="attr_luck" type="text">
                             </div>
                             <div class="sheet-item sheet-favored-grid">
-                                <input class="sheet-item sheet-favored-str" name="attr_strength_favored" type="text">
-                                <input class="sheet-item sheet-favored-end" name="attr_endurance_favored" type="text">
-                                <input class="sheet-item sheet-favored-ag" name="attr_agility_favored" type="text">
+                                <input class="sheet-item sheet-favored-str" name="attr_strength_favored" type="checkbox" value='1'>
+                                <input class="sheet-item sheet-favored-end" name="attr_endurance_favored" type="checkbox" value='1'>
+                                <input class="sheet-item sheet-favored-ag" name="attr_agility_favored" type="checkbox" value='1'>
                                 <input class="sheet-item sheet-favored-int" name="attr_intelligence_favored"
-                                       type="text">
-                                <input class="sheet-item sheet-favored-wp" name="attr_willpower_favored" type="text">
-                                <input class="sheet-item sheet-favored-prc" name="attr_perception_favored" type="text">
-                                <input class="sheet-item sheet-favored-prs" name="attr_precision_favored" type="text">
+                                       type="checkbox" value='1'>
+                                <input class="sheet-item sheet-favored-wp" name="attr_willpower_favored" type="checkbox" value='1'>
+                                <input class="sheet-item sheet-favored-prc" name="attr_perception_favored" type="checkbox" value='1'>
+                                <input class="sheet-item sheet-favored-prs" name="attr_precision_favored" type="checkbox" value='1'>
                                 <div class="sheet-item sheet-label-favored">Favored</div>
                             </div>
                         </div> <!-- grid for primary stats -->
