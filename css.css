@@ -1,5 +1,5 @@
 .charsheet {
-    background-image: url(https://cdn.discordapp.com/attachments/369319272410775563/369319573855535106/PARCHMENT_TEMPLATE.jpg);
+    background-image: url(https://i.imgur.com/KBk8bO0.jpg);
     font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
     font-size: 14px;
 }
@@ -80,7 +80,7 @@ div.sheet-label-grid {
     grid-gap: 2px;
     grid-auto-rows: 20px;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 div.sheet-stats-grid {
@@ -93,6 +93,7 @@ div.sheet-stats-grid {
 div.sheet-stats-grid input {
     width: 46px;
     text-align: center;
+    font-size:20px;
 }
 
 div.sheet-stats-str {
