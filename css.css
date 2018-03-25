@@ -78,6 +78,10 @@ div.sheet-right-outer input {
     text-align:center;
 }
 
+div.sheet-right-outer select {
+    width: 100px;
+}
+
 div.sheet-right-outer td {
     font-size: 18px;
 }

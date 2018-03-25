@@ -9,60 +9,6 @@ on("change:Head_Lb change:Left_Arm_Lb change:Left_Leg_Lb change:Body_Lb change:R
    });
 });
 
-//calculate favoreds
-on("change:strength_favored", function() {
-   getAttrs(["strength", "strength_favored"], function(values) {
-      setAttrs({
-          strength: Math.floor(values.strength) + Math.floor(values.strength * 0.4 * values.strength_favored)
-      });
-   });
-});
-
-on("change:endurance_favored", function() {
-   getAttrs(["endurance", "endurance_favored"], function(values) {
-      setAttrs({
-          endurance: Math.floor(values.endurance) + Math.floor(values.endurance * 0.4 * values.endurance_favored)
-      });
-   });
-});
-on("change:agility_favored", function() {
-   getAttrs(["agility", "agility_favored"], function(values) {
-      setAttrs({
-          agility: Math.floor(values.agility) + Math.floor(values.agility * 0.4 * values.agility_favored)
-      });
-   });
-});
-on("change:intelligence_favored", function() {
-   getAttrs(["intelligence", "intelligence_favored"], function(values) {
-      setAttrs({
-          intelligence: Math.floor(values.intelligence) + Math.floor(values.intelligence * 0.4 * values.intelligence_favored)
-      });
-   });
-});
-on("change:willpower_favored", function() {
-   getAttrs(["willpower", "willpower_favored"], function(values) {
-      setAttrs({
-          willpower: Math.floor(values.willpower) + Math.floor(values.willpower * 0.4 * values.willpower_favored)
-      });
-   });
-});
-on("change:perception_favored", function() {
-   getAttrs(["perception", "perception_favored"], function(values) {
-      setAttrs({
-          perception: Math.floor(values.perception) + Math.floor(values.perception * 0.4 * values.perception_favored)
-      });
-   });
-});
-on("change:precision_favored", function() {
-   getAttrs(["precision", "precision_favored"], function(values) {
-      setAttrs({
-          precision: Math.floor(values.precision) + Math.floor(values.precision * 0.4 * values.precision_favored)
-      });
-   });
-});
-
-
-
 //calculate HP and Stamina Points
 on("change:endurance", function() {
    getAttrs(["endurance"], function(values) {
@@ -255,14 +201,13 @@ on("change:luck", function() {
                                 <input class="sheet-item sheet-stats-lck" name="attr_luck" type="text">
                             </div>
                             <div class="sheet-item sheet-favored-grid">
-                                <input class="sheet-item sheet-favored-str" name="attr_strength_favored" type="checkbox" value='1'>
-                                <input class="sheet-item sheet-favored-end" name="attr_endurance_favored" type="checkbox" value='1'>
-                                <input class="sheet-item sheet-favored-ag" name="attr_agility_favored" type="checkbox" value='1'>
-                                <input class="sheet-item sheet-favored-int" name="attr_intelligence_favored"
-                                       type="checkbox" value='1'>
-                                <input class="sheet-item sheet-favored-wp" name="attr_willpower_favored" type="checkbox" value='1'>
-                                <input class="sheet-item sheet-favored-prc" name="attr_perception_favored" type="checkbox" value='1'>
-                                <input class="sheet-item sheet-favored-prs" name="attr_precision_favored" type="checkbox" value='1'>
+                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio" value='strength'>
+                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio" value='endurance'>
+                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio" value='agility'>
+                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio" value='intelligence'>
+                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio" value='willpower'>
+                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio" value='perception'>
+                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio" value='precision'>
                                 <div class="sheet-item sheet-label-favored">Favored</div>
                             </div>
                         </div> <!-- grid for primary stats -->
@@ -272,29 +217,29 @@ on("change:luck", function() {
                             <div class="sheet-2colrow sheet-attributes">
                                 <div class="sheet-col">
                                     <div class="sheet-row">
-                                        Health P/Max<input class="sheet-item sheet-HP-Max" name="attr_HP_Max"
+                                        Health P/Max <input class="sheet-item sheet-HP-Max" name="attr_HP_Max"
                                                            type="text"><br>
-                                        Wound Thresh.<input class="sheet-item sheet-Wound-Thresh"
+                                        Wound Thresh. <input class="sheet-item sheet-Wound-Thresh"
                                                             name="attr_Wound_Thresh" type="text"><br>
-                                        Speed<input class="sheet-item sheet-Speed" name="attr_Speed" type="text"><br>
-                                        Init. Rating<input class="sheet-item sheet-Init-Rating" name="attr_Init_Rating"
+                                        Speed <input class="sheet-item sheet-Speed" name="attr_Speed" type="text"><br>
+                                        Init. Rating <input class="sheet-item sheet-Init-Rating" name="attr_Init_Rating"
                                                            type="text"><br>
-                                        Carry Rating<input class="sheet-item sheet-Carry-Rating"
+                                        Carry Rating <input class="sheet-item sheet-Carry-Rating"
                                                            name="attr_Carry_Rating" type="text">
                                     </div>
 
                                 </div>
                                 <div class="sheet-col">
                                     <div class="sheet-row">
-                                        Magicka P/Max<input class="sheet-item sheet-MP-Max"
+                                        Magicka P/Max <input class="sheet-item sheet-MP-Max"
                                                             name="attr_MP_Max" type="text"><br>
-                                        Stam P/Max<input class="sheet-item sheet-Stam-P-Max" name="attr_Stam_P_Max"
+                                        Stam P/Max <input class="sheet-item sheet-Stam-P-Max" name="attr_Stam_P_Max"
                                                          type="text"><br>
-                                        Luck P/Max<input class="sheet-item sheet-Luck-P-Max" name="attr_Luck_P_Max"
+                                        Luck P/Max <input class="sheet-item sheet-Luck-P-Max" name="attr_Luck_P_Max"
                                                          type="text"><br>
-                                        Action P/Max<input class="sheet-item sheet-Action-P-Max"
+                                        Action P/Max <input class="sheet-item sheet-Action-P-Max"
                                                            name="attr_Action_P_Max" type="text"><br>
-                                        Total Lb(s)<input class="sheet-item sheet-Total-Lb" name="attr_Total_Lb"
+                                        Total Lb(s) <input class="sheet-item sheet-Total-Lb" name="attr_Total_Lb"
                                                           type="text">
                                     </div>
                                 </div>
@@ -361,169 +306,421 @@ on("change:luck", function() {
                             </tr>
                             <tr>
                                 <td>Acrobatics</td>
-                                <td><input class="sheet-item" name="attr_Acrobatics_Rank" type="text"></td>
+                                <td><select name="attr_Acrobatics_Rank">
+                                        <option value="-20">Untrained</option>
+                                        <option value="0">Novice</option>
+                                        <option value="10">Apprentice</option>
+                                        <option value="20">Journeyman</option>
+                                        <option value="30">Adept</option>
+                                        <option value="40">Expert</option>
+                                        <option value="50">Master</option>
+                                    </select></td>
                                 <td><input class="sheet-item" name="attr_Acrobatics_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Acrobatics_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Alchemy</td>
-                                <td><input class="sheet-item" name="attr_Alchemy_Rank" type="text"></td>
+                                <<td><select name="attr_Alchemy_Rank">
+                                <option value="-20">Untrained</option>
+                                <option value="0">Novice</option>
+                                <option value="10">Apprentice</option>
+                                <option value="20">Journeyman</option>
+                                <option value="30">Adept</option>
+                                <option value="40">Expert</option>
+                                <option value="50">Master</option>
+                            </select></td>
                                 <td><input class="sheet-item" name="attr_Alchemy_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Alchemy_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Alteration</td>
-                                <td><input class="sheet-item" name="attr_Alteration_Rank" type="text"></td>
+                                <td><select name="attr_Alteration_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Alteration_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Alteration_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Athletics</td>
-                                <td><input class="sheet-item" name="attr_Athletics_Rank" type="text"></td>
+                                <td><select name="attr_Athletics_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Athletics_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Athletics_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Command</td>
-                                <td><input class="sheet-item" name="attr_Command_Rank" type="text"></td>
+                                <td><select name="attr_Command_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Command_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Command_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Commerce</td>
-                                <td><input class="sheet-item" name="attr_Commerce_Rank" type="text"></td>
+                                <td><select name="attr_Commerce_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Commerce_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Commerce_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Conjuration</td>
-                                <td><input class="sheet-item" name="attr_Conjuration_Rank" type="text"></td>
+                                <td><select name="attr_Conjuration_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Conjuration_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Conjuration_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Deceive</td>
-                                <td><input class="sheet-item" name="attr_Decieve_Rank" type="text"></td>
+                                <td><select name="attr_Deceive_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Decieve_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Decieve_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Destruction</td>
-                                <td><input class="sheet-item" name="attr_Destruction_Rank" type="text"></td>
+                                <td><select name="attr_Destruction_Rank">
+                                <option value="-20">Untrained</option>
+                                <option value="0">Novice</option>
+                                <option value="10">Apprentice</option>
+                                <option value="20">Journeyman</option>
+                                <option value="30">Adept</option>
+                                <option value="40">Expert</option>
+                                <option value="50">Master</option>
+                            </select></td>
                                 <td><input class="sheet-item" name="attr_Destruction_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Destruction_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Enchant</td>
-                                <td><input class="sheet-item" name="attr_Enchant_Rank" type="text"></td>
+                                <td><select name="attr_Enchant_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Enchant_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Enchant_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Evade</td>
-                                <td><input class="sheet-item" name="attr_Evade_Rank" type="text"></td>
+                                <td><select name="attr_Evade_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Evade_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Evade_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Illusion</td>
-                                <td><input class="sheet-item" name="attr_Illusion_Rank" type="text"></td>
+                                <td><select name="attr_Illusion_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Illusion_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Illusion_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Investigate</td>
-                                <td><input class="sheet-item" name="attr_Investigate_Rank" type="text"></td>
+                                <td><select name="attr_Investigate_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Investigate_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Investigate_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Logic</td>
-                                <td><input class="sheet-item" name="attr_Logic_Rank" type="text"></td>
+                                <td><select name="attr_Logic_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Logic_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Logic_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Lore</td>
-                                <td><input class="sheet-item" name="attr_Lore_Rank" type="text"></td>
+                                <td><select name="attr_Lore_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Lore_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Lore_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Mysticism</td>
-                                <td><input class="sheet-item" name="attr_Mysticism_Rank" type="text"></td>
+                                <td><select name="attr_Mysticism_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Mysticism_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Mysticism_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Navigate</td>
-                                <td><input class="sheet-item" name="attr_Navigate_Rank" type="text"></td>
+                                <td><select name="attr_Navigate_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Navigate_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Navigate_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Necromancy</td>
-                                <td><input class="sheet-item" name="attr_Necromancy_Rank" type="text"></td>
+                                <td><select name="attr_Necromancy_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Necromancy_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Necromancy_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Observe</td>
-                                <td><input class="sheet-item" name="attr_Observe_Rank" type="text"></td>
+                                <td><select name="attr_Observe_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Observe_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Observe_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Persuade</td>
-                                <td><input class="sheet-item" name="attr_Persuade_Rank" type="text"></td>
+                                <td><select name="attr_Persuade_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Persuade_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Persuade_Base_TN" type="text"></td>
                             </tr>
                             <tr>
-                                <td>Profession</td>
-                                <td><input class="sheet-item" name="attr_Profession_Rank" type="text"></td>
-                                <td><input class="sheet-item" name="attr_Profession_Bonus" type="text"></td>
-                                <td><input class="sheet-item" name="attr_Profession_Base_TN" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Profession1" placeholder="Profession" type="text"></td>
+                                <td><select name="attr_Profession1_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
+                                <td><input class="sheet-item" name="attr_Profession1_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Profession1_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="sheet-item" name="attr_Profession2" placeholder="Profession" type="text"></td>
+                                <td><select name="attr_Profession2_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
+                                <td><input class="sheet-item" name="attr_Profession2_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Profession2_Base_TN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="sheet-item" name="attr_Profession3" placeholder="Profession" type="text"></td>
+                                <td><select name="attr_Profession3_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
+                                <td><input class="sheet-item" name="attr_Profession3_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Profession3_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Restoration</td>
-                                <td><input class="sheet-item" name="attr_Restoration_Rank" type="text"></td>
+                                <td><select name="attr_Restoration_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Restoration_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Restoration_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Ride</td>
-                                <td><input class="sheet-item" name="attr_Ride_Rank" type="text"></td>
+                                <td><select name="attr_Ride_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Ride_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Ride_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Shehai Shen She Ru</td>
-                                <td><input class="sheet-item" name="attr_Shehai_Shen_She_Ru_Rank" type="text"></td>
+                                <td><select name="attr_Shehai_Shen_She_Ru_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Shehai_Shen_She_Ru_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Shehai_Shen_She_Ru_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Stealth</td>
-                                <td><input class="sheet-item" name="attr_Stealth_Rank" type="text"></td>
+                                <td><select name="attr_Stealth_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Stealth_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Stealth_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Subterfuge</td>
-                                <td><input class="sheet-item" name="attr_Subterfuge_Rank" type="text"></td>
+                                <td><select name="attr_Subterfuge_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Subterfuge_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Subterfuge_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Survival</td>
-                                <td><input class="sheet-item" name="attr_Survival_Rank" type="text"></td>
+                                <td><select name="attr_Survival_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Survival_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Survival_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Th'uum</td>
-                                <td><input class="sheet-item" name="attr_Thuum_Rank" type="text"></td>
+                                <td><select name="attr_Thuum_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Thuum_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Thuum_Base_TN" type="text"></td>
                             </tr>
