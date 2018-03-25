@@ -1,4 +1,14 @@
 <script type="text/worker">
+//calculate total weight
+on("change:Head_Lb change:Left_Arm_Lb change:Left_Leg_Lb change:Body_Lb change:Right_Arm_Lb change:Right_Leg_Lb", function() {
+   getAttrs(["Head_Lb", "Left_Arm_Lb", "Left_Leg_Lb", "Body_Lb", "Right_Arm_Lb", "Right_Leg_Lb"], function(values) {
+      setAttrs({
+          Total_Lb: Number(values.Head_Lb) + Number(values.Left_Arm_Lb) + Number(values.Left_Leg_Lb)
+            + Number(values.Body_Lb) + Number(values.Right_Arm_Lb) + Number(values.Right_Leg_Lb)
+      });
+   });
+});
+
 //calculate favoreds
 on("change:strength_favored", function() {
    getAttrs(["strength", "strength_favored"], function(values) {
@@ -7,6 +17,7 @@ on("change:strength_favored", function() {
       });
    });
 });
+
 on("change:endurance_favored", function() {
    getAttrs(["endurance", "endurance_favored"], function(values) {
       setAttrs({
