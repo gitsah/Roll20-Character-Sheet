@@ -170,15 +170,15 @@
         });
     });
 
-    //Base TN for Decieve
-    on("change:Decieve_Rank", function () {
-        getAttrs(["Decieve_Rank", "intelligence", "precision"], function (values) {
+    //Base TN for Deceive
+    on("change:Deceive_Rank", function () {
+        getAttrs(["Deceive_Rank", "intelligence", "precision"], function (values) {
             setAttrs({
-                Decieve_Bonus: values.Decieve_Rank
+                Deceive_Bonus: values.Deceive_Rank
             });
             setAttrs({
-                Decieve_Base_TN: "int:" + (Number(values.Decieve_Rank) + Number(values.intelligence)) + "/prs:"
-                + (Number(values.Decieve_Rank) + Number(values.precision))
+                Deceive_Base_TN: "int:" + (Number(values.Deceive_Rank) + Number(values.intelligence)) + "/prs:"
+                + (Number(values.Deceive_Rank) + Number(values.precision))
             });
         });
     });
@@ -416,6 +416,33 @@
             });
             setAttrs({
                 Thuum_Base_TN: "wp:" + (Number(values.Thuum_Rank) + Number(values.willpower))
+            });
+        });
+    });
+
+    //Bonus for profession1
+    on("change:Profession1_Rank", function () {
+        getAttrs(["Profession1_Rank"], function (values) {
+            setAttrs({
+                Profession1_Bonus: values.Profession1_Rank
+            });
+        });
+    });
+
+    //Bonus for profession2
+    on("change:profession2_Rank", function () {
+        getAttrs(["profession2_Rank"], function (values) {
+            setAttrs({
+                profession2_Bonus: values.profession2_Rank
+            });
+        });
+    });
+
+    //Bonus for profession3
+    on("change:profession3_Rank", function () {
+        getAttrs(["profession3_Rank"], function (values) {
+            setAttrs({
+                profession3_Bonus: values.profession3_Rank
             });
         });
     });
@@ -761,8 +788,8 @@
                                     <option value="40">Expert</option>
                                     <option value="50">Master</option>
                                 </select></td>
-                                <td><input class="sheet-item" name="attr_Decieve_Bonus" type="text"></td>
-                                <td><input class="sheet-item" name="attr_Decieve_Base_TN" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Deceive_Bonus" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Deceive_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Destruction</td>
