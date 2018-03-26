@@ -1,84 +1,223 @@
 <script type="text/worker">
-//calculate total weight
-on("change:Head_Lb change:Left_Arm_Lb change:Left_Leg_Lb change:Body_Lb change:Right_Arm_Lb change:Right_Leg_Lb", function() {
-   getAttrs(["Head_Lb", "Left_Arm_Lb", "Left_Leg_Lb", "Body_Lb", "Right_Arm_Lb", "Right_Leg_Lb"], function(values) {
-      setAttrs({
-          Total_Lb: Number(values.Head_Lb) + Number(values.Left_Arm_Lb) + Number(values.Left_Leg_Lb)
-            + Number(values.Body_Lb) + Number(values.Right_Arm_Lb) + Number(values.Right_Leg_Lb)
-      });
-   });
-});
+    //javascript
+    //calculate total weight
+    on("change:Head_Lb change:Left_Arm_Lb change:Left_Leg_Lb change:Body_Lb change:Right_Arm_Lb change:Right_Leg_Lb", function () {
+        getAttrs(["Head_Lb", "Left_Arm_Lb", "Left_Leg_Lb", "Body_Lb", "Right_Arm_Lb", "Right_Leg_Lb"], function (values) {
+            setAttrs({
+                Total_Lb: Number(values.Head_Lb) + Number(values.Left_Arm_Lb) + Number(values.Left_Leg_Lb)
+                + Number(values.Body_Lb) + Number(values.Right_Arm_Lb) + Number(values.Right_Leg_Lb)
+            });
+        });
+    });
 
-//calculate HP and Stamina Points
-on("change:endurance", function() {
-   getAttrs(["endurance"], function(values) {
-      setAttrs({
-          HP_Max: Math.ceil(values.endurance / 2)
+    //calculate HP and Stamina Points
+    on("change:endurance", function () {
+        getAttrs(["endurance"], function (values) {
+            setAttrs({
+                HP_Max: Math.ceil(values.endurance / 2)
 
-      });
-      setAttrs({
-          Stam_P_Max: Math.floor(values.endurance / 10)
-      });
-   });
-});
+            });
+            setAttrs({
+                Stam_P_Max: Math.floor(values.endurance / 10)
+            });
+        });
+    });
 
-//calculate MP
-on("change:intelligence", function() {
-   getAttrs(["intelligence"], function(values) {
-      setAttrs({
-          MP_Max: values.intelligence
-      });
-   });
-});
+    //calculate MP
+    on("change:intelligence", function () {
+        getAttrs(["intelligence"], function (values) {
+            setAttrs({
+                MP_Max: values.intelligence
+            });
+        });
+    });
 
-//calculate Wound Threshold
-on("change:endurance change:strength change:willpower", function() {
-   getAttrs(["endurance", "strength", "willpower"], function(values) {
-      setAttrs({
-          Wound_Thresh: Math.floor(values.endurance / 10) + Math.floor(values.strength / 10) + Math.floor(values.willpower / 10)
-      });
-   });
-});
+    //calculate Wound Threshold
+    on("change:endurance change:strength change:willpower", function () {
+        getAttrs(["endurance", "strength", "willpower"], function (values) {
+            setAttrs({
+                Wound_Thresh: Math.floor(values.endurance / 10) + Math.floor(values.strength / 10) + Math.floor(values.willpower / 10)
+            });
+        });
+    });
 
-//calculate Speed
-on("change:strength change:agility", function() {
-   getAttrs(["agility", "strength"], function(values) {
-      setAttrs({
-          Speed: Math.floor(values.strength / 10) + (2 * (Math.floor(values.agility / 10)))
-      });
-   });
-});
+    //calculate Speed
+    on("change:strength change:agility", function () {
+        getAttrs(["agility", "strength"], function (values) {
+            setAttrs({
+                Speed: Math.floor(values.strength / 10) + (2 * (Math.floor(values.agility / 10)))
+            });
+        });
+    });
 
-//calculate Carry Rating
-on("change:strength change:endurance", function() {
-   getAttrs(["strength", "endurance"], function(values) {
-      setAttrs({
-          Carry_Rating: (6 * (Math.floor(values.strength / 10))) + (3 * (Math.floor(values.endurance / 10)))
-      });
-   });
-});
+    //calculate Carry Rating
+    on("change:strength change:endurance", function () {
+        getAttrs(["strength", "endurance"], function (values) {
+            setAttrs({
+                Carry_Rating: (6 * (Math.floor(values.strength / 10))) + (3 * (Math.floor(values.endurance / 10)))
+            });
+        });
+    });
 
-//calculate Initiative Rating and Action Points
-on("change:agility change:intelligence change:perception", function() {
-   getAttrs(["agility", "intelligence", "perception"], function(values) {
-      setAttrs({
-          Init_Rating: Math.floor(values.agility / 10) + Math.floor(values.intelligence / 10) + Math.floor(values.perception / 10)
-      });
-      setAttrs({
-          Action_P_Max: Math.floor(values.agility / 10) + Math.floor(values.intelligence / 10) + Math.floor(values.perception / 10)
-      });
-   });
-});
+    //calculate Initiative Rating and Action Points
+    on("change:agility change:intelligence change:perception", function () {
+        getAttrs(["agility", "intelligence", "perception"], function (values) {
+            setAttrs({
+                Init_Rating: Math.floor(values.agility / 10) + Math.floor(values.intelligence / 10) + Math.floor(values.perception / 10)
+            });
+            setAttrs({
+                Action_P_Max: Math.floor(values.agility / 10) + Math.floor(values.intelligence / 10) + Math.floor(values.perception / 10)
+            });
+        });
+    });
 
-//calculate Luck Points
-on("change:luck", function() {
-   getAttrs(["luck"], function(values) {
-      setAttrs({
-          Luck_P_Max: Math.floor(values.luck / 10)
-      });
-   });
-});
+    //calculate Luck Points
+    on("change:luck", function () {
+        getAttrs(["luck"], function (values) {
+            setAttrs({
+                Luck_P_Max: Math.floor(values.luck / 10)
+            });
+        });
+    });
 
+    //Bonus and Base TN calcs
+    //Base TN for Acrobatics
+    on("change:Acrobatics_Rank", function () {
+        getAttrs(["Acrobatics_Rank", "strength", "agility"], function (values) {
+            setAttrs({
+                Acrobatics_Bonus: values.Acrobatics_Rank
+            });
+            setAttrs({
+                Acrobatics_Base_TN: "str:" + (Number(values.Acrobatics_Rank) + Number(values.strength)) + "/ag:"
+                + (Number(values.Acrobatics_Rank) + Number(values.agility))
+            });
+        });
+    });
+
+    //Base TN for Alchemy
+    on("change:Alchemy_Rank", function () {
+        getAttrs(["Alchemy_Rank", "intelligence"], function (values) {
+            setAttrs({
+                Alchemy_Bonus: values.Alchemy_Rank
+            });
+            setAttrs({
+                Alchemy_Base_TN: "int:" + (Number(values.Alchemy_Rank) + Number(values.intelligence))
+            });
+        });
+    });
+
+    //Base TN for Alteration
+    on("change:Alteration_Rank", function () {
+        getAttrs(["Alteration_Rank", "willpower"], function (values) {
+            setAttrs({
+                Alteration_Bonus: values.Alteration_Rank
+            });
+            setAttrs({
+                Alteration_Base_TN: "wp:" + (Number(values.Alteration_Rank) + Number(values.willpower))
+            });
+        });
+    });
+
+    //Base TN for Athletics
+    on("change:Athletics_Rank", function () {
+        getAttrs(["Athletics_Rank", "strength", "endurance"], function (values) {
+            setAttrs({
+                Athletics_Bonus: values.Athletics_Rank
+            });
+            setAttrs({
+                Athletics_Base_TN: "str:" + (Number(values.Athletics_Rank) + Number(values.strength)) + "/end:"
+                + (Number(values.Athletics_Rank) + Number(values.endurance))
+            });
+        });
+    });
+
+    //Base TN for Command
+    on("change:Command_Rank", function () {
+        getAttrs(["Command_Rank", "strength", "intelligence", "precision"], function (values) {
+            setAttrs({
+                Command_Bonus: values.Command_Rank
+            });
+            setAttrs({
+                Command_Base_TN: "str:" + (Number(values.Command_Rank) + Number(values.strength)) + "/int:"
+                + (Number(values.Command_Rank) + Number(values.intelligence)) + "/prs:"
+                + (Number(values.Command_Rank) + Number(values.precision))
+            });
+        });
+    });
+
+    //Base TN for Commerce
+    on("change:Commerce_Rank", function () {
+        getAttrs(["Commerce_Rank", "intelligence", "precision"], function (values) {
+            setAttrs({
+                Commerce_Bonus: values.Commerce_Rank
+            });
+            setAttrs({
+                Commerce_Base_TN: "int:" + (Number(values.Commerce_Rank) + Number(values.intelligence)) + "/prs:"
+                + (Number(values.Commerce_Rank) + Number(values.precision))
+            });
+        });
+    });
+
+    //Base TN for Conjuration
+    on("change:Conjuration_Rank", function () {
+        getAttrs(["Conjuration_Rank", "willpower"], function (values) {
+            setAttrs({
+                Conjuration_Bonus: values.Conjuration_Rank
+            });
+            setAttrs({
+                Conjuration_Base_TN: "wp:" + (Number(values.Conjuration_Rank) + Number(values.willpower))
+            });
+        });
+    });
+
+    //Base TN for Decieve
+    on("change:Decieve_Rank", function () {
+        getAttrs(["Decieve_Rank", "intelligence", "precision"], function (values) {
+            setAttrs({
+                Decieve_Bonus: values.Decieve_Rank
+            });
+            setAttrs({
+                Decieve_Base_TN: "int:" + (Number(values.Decieve_Rank) + Number(values.intelligence)) + "/prs:"
+                + (Number(values.Decieve_Rank) + Number(values.precision))
+            });
+        });
+    });
+
+    //Base TN for Destruction
+    on("change:Destruction_Rank", function () {
+        getAttrs(["Destruction_Rank", "willpower"], function (values) {
+            setAttrs({
+                Destruction_Bonus: values.Destruction_Rank
+            });
+            setAttrs({
+                Destruction_Base_TN: "wp:" + (Number(values.Destruction_Rank) + Number(values.willpower))
+            });
+        });
+    });
+
+    //Base TN for Enchant
+    on("change:Enchant_Rank", function () {
+        getAttrs(["Enchant_Rank", "intelligence"], function (values) {
+            setAttrs({
+                Enchant_Bonus: values.Enchant_Rank
+            });
+            setAttrs({
+                Enchant_Base_TN: "int:" + (Number(values.Enchant_Rank) + Number(values.intelligence))
+            });
+        });
+    });
+
+    //Base TN for Evade
+    on("change:Evade_Rank", function () {
+        getAttrs(["Evade_Rank", "agility"], function (values) {
+            setAttrs({
+                Evade_Bonus: values.Evade_Rank
+            });
+            setAttrs({
+                Evade_Base_TN: "ag:" + (Number(values.Evade_Rank) + Number(values.agility))
+            });
+        });
+    });
 
 </script>
 <div class="sheet-characteristics">
@@ -201,13 +340,20 @@ on("change:luck", function() {
                                 <input class="sheet-item sheet-stats-lck" name="attr_luck" type="text">
                             </div>
                             <div class="sheet-item sheet-favored-grid">
-                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio" value='strength'>
-                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio" value='endurance'>
-                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio" value='agility'>
-                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio" value='intelligence'>
-                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio" value='willpower'>
-                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio" value='perception'>
-                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio" value='precision'>
+                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio"
+                                       value='strength'>
+                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio"
+                                       value='endurance'>
+                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio"
+                                       value='agility'>
+                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio"
+                                       value='intelligence'>
+                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio"
+                                       value='willpower'>
+                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio"
+                                       value='perception'>
+                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio"
+                                       value='precision'>
                                 <div class="sheet-item sheet-label-favored">Favored</div>
                             </div>
                         </div> <!-- grid for primary stats -->
@@ -218,29 +364,29 @@ on("change:luck", function() {
                                 <div class="sheet-col">
                                     <div class="sheet-row">
                                         Health P/Max <input class="sheet-item sheet-HP-Max" name="attr_HP_Max"
-                                                           type="text"><br>
+                                                            type="text"><br>
                                         Wound Thresh. <input class="sheet-item sheet-Wound-Thresh"
-                                                            name="attr_Wound_Thresh" type="text"><br>
+                                                             name="attr_Wound_Thresh" type="text"><br>
                                         Speed <input class="sheet-item sheet-Speed" name="attr_Speed" type="text"><br>
                                         Init. Rating <input class="sheet-item sheet-Init-Rating" name="attr_Init_Rating"
-                                                           type="text"><br>
+                                                            type="text"><br>
                                         Carry Rating <input class="sheet-item sheet-Carry-Rating"
-                                                           name="attr_Carry_Rating" type="text">
+                                                            name="attr_Carry_Rating" type="text">
                                     </div>
 
                                 </div>
                                 <div class="sheet-col">
                                     <div class="sheet-row">
                                         Magicka P/Max <input class="sheet-item sheet-MP-Max"
-                                                            name="attr_MP_Max" type="text"><br>
+                                                             name="attr_MP_Max" type="text"><br>
                                         Stam P/Max <input class="sheet-item sheet-Stam-P-Max" name="attr_Stam_P_Max"
-                                                         type="text"><br>
+                                                          type="text"><br>
                                         Luck P/Max <input class="sheet-item sheet-Luck-P-Max" name="attr_Luck_P_Max"
-                                                         type="text"><br>
+                                                          type="text"><br>
                                         Action P/Max <input class="sheet-item sheet-Action-P-Max"
-                                                           name="attr_Action_P_Max" type="text"><br>
+                                                            name="attr_Action_P_Max" type="text"><br>
                                         Total Lb(s) <input class="sheet-item sheet-Total-Lb" name="attr_Total_Lb"
-                                                          type="text">
+                                                           type="text">
                                     </div>
                                 </div>
                             </div>
@@ -307,28 +453,29 @@ on("change:luck", function() {
                             <tr>
                                 <td>Acrobatics</td>
                                 <td><select name="attr_Acrobatics_Rank">
-                                        <option value="-20">Untrained</option>
-                                        <option value="0">Novice</option>
-                                        <option value="10">Apprentice</option>
-                                        <option value="20">Journeyman</option>
-                                        <option value="30">Adept</option>
-                                        <option value="40">Expert</option>
-                                        <option value="50">Master</option>
-                                    </select></td>
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Acrobatics_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Acrobatics_Base_TN" type="text"></td>
                             </tr>
                             <tr>
                                 <td>Alchemy</td>
-                                <<td><select name="attr_Alchemy_Rank">
-                                <option value="-20">Untrained</option>
-                                <option value="0">Novice</option>
-                                <option value="10">Apprentice</option>
-                                <option value="20">Journeyman</option>
-                                <option value="30">Adept</option>
-                                <option value="40">Expert</option>
-                                <option value="50">Master</option>
-                            </select></td>
+                                <
+                                <td><select name="attr_Alchemy_Rank">
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Alchemy_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Alchemy_Base_TN" type="text"></td>
                             </tr>
@@ -419,14 +566,14 @@ on("change:luck", function() {
                             <tr>
                                 <td>Destruction</td>
                                 <td><select name="attr_Destruction_Rank">
-                                <option value="-20">Untrained</option>
-                                <option value="0">Novice</option>
-                                <option value="10">Apprentice</option>
-                                <option value="20">Journeyman</option>
-                                <option value="30">Adept</option>
-                                <option value="40">Expert</option>
-                                <option value="50">Master</option>
-                            </select></td>
+                                    <option value="-20">Untrained</option>
+                                    <option value="0">Novice</option>
+                                    <option value="10">Apprentice</option>
+                                    <option value="20">Journeyman</option>
+                                    <option value="30">Adept</option>
+                                    <option value="40">Expert</option>
+                                    <option value="50">Master</option>
+                                </select></td>
                                 <td><input class="sheet-item" name="attr_Destruction_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Destruction_Base_TN" type="text"></td>
                             </tr>
@@ -585,7 +732,8 @@ on("change:luck", function() {
                                 <td><input class="sheet-item" name="attr_Persuade_Base_TN" type="text"></td>
                             </tr>
                             <tr>
-                                <td><input class="sheet-item" name="attr_Profession1" placeholder="Profession" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Profession1" placeholder="Profession"
+                                           type="text"></td>
                                 <td><select name="attr_Profession1_Rank">
                                     <option value="-20">Untrained</option>
                                     <option value="0">Novice</option>
@@ -599,7 +747,8 @@ on("change:luck", function() {
                                 <td><input class="sheet-item" name="attr_Profession1_Base_TN" type="text"></td>
                             </tr>
                             <tr>
-                                <td><input class="sheet-item" name="attr_Profession2" placeholder="Profession" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Profession2" placeholder="Profession"
+                                           type="text"></td>
                                 <td><select name="attr_Profession2_Rank">
                                     <option value="-20">Untrained</option>
                                     <option value="0">Novice</option>
@@ -613,7 +762,8 @@ on("change:luck", function() {
                                 <td><input class="sheet-item" name="attr_Profession2_Base_TN" type="text"></td>
                             </tr>
                             <tr>
-                                <td><input class="sheet-item" name="attr_Profession3" placeholder="Profession" type="text"></td>
+                                <td><input class="sheet-item" name="attr_Profession3" placeholder="Profession"
+                                           type="text"></td>
                                 <td><select name="attr_Profession3_Rank">
                                     <option value="-20">Untrained</option>
                                     <option value="0">Novice</option>
