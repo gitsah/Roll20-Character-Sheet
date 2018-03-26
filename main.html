@@ -219,6 +219,207 @@
         });
     });
 
+    //Base TN for Illusion
+    on("change:Illusion_Rank", function () {
+        getAttrs(["Illusion_Rank", "willpower"], function (values) {
+            setAttrs({
+                Illusion_Bonus: values.Illusion_Rank
+            });
+            setAttrs({
+                Illusion_Base_TN: "wp:" + (Number(values.Illusion_Rank) + Number(values.willpower))
+            });
+        });
+    });
+
+    //Base TN for Investigate
+    on("change:Investigate_Rank", function () {
+        getAttrs(["Investigate_Rank", "intelligence", "perception"], function (values) {
+            setAttrs({
+                Investigate_Bonus: values.Investigate_Rank
+            });
+            setAttrs({
+                Investigate_Base_TN: "int:" + (Number(values.Investigate_Rank) + Number(values.intelligence)) + "/prc:"
+                + (Number(values.Investigate_Rank) + Number(values.perception))
+            });
+        });
+    });
+
+    //Base TN for Logic
+    on("change:Logic_Rank", function () {
+        getAttrs(["Logic_Rank", "intelligence", "perception"], function (values) {
+            setAttrs({
+                Logic_Bonus: values.Logic_Rank
+            });
+            setAttrs({
+                Logic_Base_TN: "int:" + (Number(values.Logic_Rank) + Number(values.intelligence)) + "/prc:"
+                + (Number(values.Logic_Rank) + Number(values.perception))
+            });
+        });
+    });
+
+    //Base TN for Lore
+    on("change:Lore_Rank", function () {
+        getAttrs(["Lore_Rank", "intelligence"], function (values) {
+            setAttrs({
+                Lore_Bonus: values.Lore_Rank
+            });
+            setAttrs({
+                Lore_Base_TN: "int:" + (Number(values.Lore_Rank) + Number(values.intelligence))
+            });
+        });
+    });
+
+    //Base TN for Mysticism
+    on("change:Mysticism_Rank", function () {
+        getAttrs(["Mysticism_Rank", "willpower"], function (values) {
+            setAttrs({
+                Mysticism_Bonus: values.Mysticism_Rank
+            });
+            setAttrs({
+                Mysticism_Base_TN: "wp:" + (Number(values.Mysticism_Rank) + Number(values.willpower))
+            });
+        });
+    });
+
+    //Base TN for Navigate
+    on("change:Navigate_Rank", function () {
+        getAttrs(["Navigate_Rank", "intelligence", "perception"], function (values) {
+            setAttrs({
+                Navigate_Bonus: values.Navigate_Rank
+            });
+            setAttrs({
+                Navigate_Base_TN: "int:" + (Number(values.Navigate_Rank) + Number(values.intelligence)) + "/prc:"
+                + (Number(values.Navigate_Rank) + Number(values.perception))
+            });
+        });
+    });
+
+    //Base TN for Necromancy
+    on("change:Necromancy_Rank", function () {
+        getAttrs(["Necromancy_Rank", "intelligence"], function (values) {
+            setAttrs({
+                Necromancy_Bonus: values.Necromancy_Rank
+            });
+            setAttrs({
+                Necromancy_Base_TN: "int:" + (Number(values.Necromancy_Rank) + Number(values.intelligence))
+            });
+        });
+    });
+
+    //Base TN for Observe
+    on("change:Observe_Rank", function () {
+        getAttrs(["Observe_Rank", "perception"], function (values) {
+            setAttrs({
+                Observe_Bonus: values.Observe_Rank
+            });
+            setAttrs({
+                Observe_Base_TN: "prc:" + (Number(values.Observe_Rank) + Number(values.perception))
+            });
+        });
+    });
+
+    //Base TN for Persuade
+    on("change:Persuade_Rank", function () {
+        getAttrs(["Persuade_Rank", "strength", "precision"], function (values) {
+            setAttrs({
+                Persuade_Bonus: values.Persuade_Rank
+            });
+            setAttrs({
+                Persuade_Base_TN: "str:" + (Number(values.Persuade_Rank) + Number(values.strength)) + "/prs:"
+                + (Number(values.Persuade_Rank) + Number(values.precision))
+            });
+        });
+    });
+
+    //Base TN for Restoration
+    on("change:Restoration_Rank", function () {
+        getAttrs(["Restoration_Rank", "willpower"], function (values) {
+            setAttrs({
+                Restoration_Bonus: values.Restoration_Rank
+            });
+            setAttrs({
+                Restoration_Base_TN: "wp:" + (Number(values.Restoration_Rank) + Number(values.willpower))
+            });
+        });
+    });
+
+    //Base TN for Ride
+    on("change:Ride_Rank", function () {
+        getAttrs(["Ride_Rank", "agility"], function (values) {
+            setAttrs({
+                Ride_Bonus: values.Ride_Rank
+            });
+            setAttrs({
+                Ride_Base_TN: "ag:" + (Number(values.Ride_Rank) + Number(values.agility))
+            });
+        });
+    });
+
+    //Base TN for Shehai Shen She Ru
+    on("change:Shehai_Shen_She_Ru_Rank", function () {
+        getAttrs(["Shehai_Shen_She_Ru_Rank", "strength", "agility", "willpower"], function (values) {
+            setAttrs({
+                Shehai_Shen_She_Ru_Bonus: values.Shehai_Shen_She_Ru_Rank
+            });
+            setAttrs({
+                Shehai_Shen_She_Ru_Base_TN: "str:" + (Number(values.Shehai_Shen_She_Ru_Rank) + Number(values.strength))
+                + "/ag:" + (Number(values.Shehai_Shen_She_Ru_Rank) + Number(values.agility)) + "/wp:"
+                + (Number(values.Shehai_Shen_She_Ru_Rank) + Number(values.willpower))
+            });
+        });
+    });
+
+    //Base TN for Stealth
+    on("change:Stealth_Rank", function () {
+        getAttrs(["Stealth_Rank", "agility", "perception"], function (values) {
+            setAttrs({
+                Stealth_Bonus: values.Stealth_Rank
+            });
+            setAttrs({
+                Stealth_Base_TN: "ag:" + (Number(values.Stealth_Rank) + Number(values.agility)) + "/prc:"
+                + (Number(values.Stealth_Rank) + Number(values.perception))
+            });
+        });
+    });
+
+    //Base TN for Subterfuge
+    on("change:Subterfuge_Rank", function () {
+        getAttrs(["Subterfuge_Rank", "agility", "intelligence"], function (values) {
+            setAttrs({
+                Subterfuge_Bonus: values.Subterfuge_Rank
+            });
+            setAttrs({
+                Subterfuge_Base_TN: "ag:" + (Number(values.Subterfuge_Rank) + Number(values.agility)) + "/int:"
+                + (Number(values.Subterfuge_Rank) + Number(values.intelligence))
+            });
+        });
+    });
+
+    //Base TN for Survival
+    on("change:Survival_Rank", function () {
+        getAttrs(["Survival_Rank", "intelligence", "perception"], function (values) {
+            setAttrs({
+                Survival_Bonus: values.Survival_Rank
+            });
+            setAttrs({
+                Survival_Base_TN: "int:" + (Number(values.Survival_Rank) + Number(values.intelligence)) + "/prc:"
+                + (Number(values.Survival_Rank) + Number(values.perception))
+            });
+        });
+    });
+
+    //Base TN for Th'uum
+    on("change:Thuum_Rank", function () {
+        getAttrs(["Thuum_Rank", "willpower"], function (values) {
+            setAttrs({
+                Thuum_Bonus: values.Thuum_Rank
+            });
+            setAttrs({
+                Thuum_Base_TN: "wp:" + (Number(values.Thuum_Rank) + Number(values.willpower))
+            });
+        });
+    });
+
 </script>
 <div class="sheet-characteristics">
 
