@@ -1,5 +1,14 @@
 <script type="text/worker">
     //javascript
+    //calculate luck crit fail
+    on("change:Luck_P_Max", function () {
+        getAttrs(["Luck_P_Max"], function (values) {
+            setAttrs({
+                Luck_Fail: Number(values.Luck_P_Max) + 95
+            });
+        });
+    });
+
     //calculate total weight
     on("change:Head_Lb change:Left_Arm_Lb change:Left_Leg_Lb change:Body_Lb change:Right_Arm_Lb change:Right_Leg_Lb", function () {
         getAttrs(["Head_Lb", "Left_Arm_Lb", "Left_Leg_Lb", "Body_Lb", "Right_Arm_Lb", "Right_Leg_Lb"], function (values) {
@@ -589,6 +598,7 @@
                         <div class="sheet-item">
                             <h2>Attributes</h2>
                             <div class="sheet-2colrow sheet-attributes">
+                                <span name="attr_Luck_Fail"></span>
                                 <div class="sheet-col">
                                     <div class="sheet-row sheet-attributes-left">
                                         Wound Thresh. <input class="sheet-item sheet-Wound-Thresh sheet-big-attr"
@@ -622,10 +632,10 @@
                                                            type="text"><input class="sheet-item sheet-Stam-P-Max"
                                                                               name="attr_Stam_P_Max"
                                                                               type="text"><br>
-                                        Luck Points <input class="sheet-item sheet-Luck-P" value="0" name="attr_Luck_P"
-                                                           type="text"><input class="sheet-item sheet-Luck-P-Max"
-                                                                              name="attr_Luck_P_Max"
-                                                                              type="text"><br>
+                                        Luck Points<input class="sheet-item sheet-Luck-P" value="0" name="attr_Luck_P"
+                                                          type="text"><input class="sheet-item sheet-Luck-P-Max"
+                                                                             name="attr_Luck_P_Max"
+                                                                             type="text"><br>
                                         Action Points <input class="sheet-item sheet-Action-P" value="0"
                                                              name="attr_Action_P" type="text"><input
                                             class="sheet-item sheet-Action-P-Max"
@@ -710,7 +720,7 @@
                                 <td><input class="sheet-item" name="attr_Acrobatics_Base_TN" type="text"></td>
                                 <td>
                                     <button name="roll_AcrobaticsRoll" type="roll"
-                                            value="&{template:test} {{rollname=^{Roll Acrobatics}}} {{roll=[[((@{Acrobatics_Rank} + ?{Which stat do you want to use?|Strength,@{strength}|Agility,@{agility}} + ?{Modifier|0}) - 1d100) / 10]]}} {{target=[[@{Acrobatics_Rank} + ?{Which stat do you want to use?|Strength,@{strength}|Agility,@{agility}} + ?{Modifier|0}]]}}"></button>
+                                            value="&{template:test} {{rollname=^{Roll Acrobatics}}} {{roll=[[((@{Acrobatics_Rank} + ?{Which stat do you want to use?|Strength,@{strength}|Agility,@{agility}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Acrobatics_Rank} + ?{Which stat do you want to use?|Strength,@{strength}|Agility,@{agility}} + ?{Modifier|0}]]}}"></button>
                                 </td>
                             </tr>
                             <tr>

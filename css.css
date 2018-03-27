@@ -44,6 +44,10 @@ div.sheet-attributes {
     text-align: right;
 }
 
+div.sheet-attributes span {
+    display:none;
+}
+
 div.sheet-attributes-left input{
     width:72px;
 }
