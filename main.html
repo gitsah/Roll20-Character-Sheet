@@ -567,30 +567,30 @@
                                 <div class="sheet-item sheet-label-lck">Lck</div>
                             </div>
                             <div class="sheet-item sheet-stats-grid">
-                                <input class="sheet-item sheet-stats-str" name="attr_strength" type="text">
-                                <input class="sheet-item sheet-stats-end" name="attr_endurance" type="text">
-                                <input class="sheet-item sheet-stats-ag" name="attr_agility" type="text">
-                                <input class="sheet-item sheet-stats-int" name="attr_intelligence" type="text">
-                                <input class="sheet-item sheet-stats-wp" name="attr_willpower" type="text">
-                                <input class="sheet-item sheet-stats-prc" name="attr_perception" type="text">
-                                <input class="sheet-item sheet-stats-prs" name="attr_precision" type="text">
-                                <input class="sheet-item sheet-stats-lck" name="attr_luck" type="text">
+                                <input class="sheet-item sheet-stats-str" value="0" name="attr_strength" type="text">
+                                <input class="sheet-item sheet-stats-end" value="0" name="attr_endurance" type="text">
+                                <input class="sheet-item sheet-stats-ag" value="0" name="attr_agility" type="text">
+                                <input class="sheet-item sheet-stats-int" value="0" name="attr_intelligence" type="text">
+                                <input class="sheet-item sheet-stats-wp" value="0" name="attr_willpower" type="text">
+                                <input class="sheet-item sheet-stats-prc" value="0" name="attr_perception" type="text">
+                                <input class="sheet-item sheet-stats-prs" value="0" name="attr_precision" type="text">
+                                <input class="sheet-item sheet-stats-lck" value="0" name="attr_luck" type="text">
                             </div>
                             <div class="sheet-item sheet-favored-grid">
-                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio"
-                                       value='strength'>
-                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio"
-                                       value='endurance'>
-                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio"
-                                       value='agility'>
-                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio"
-                                       value='intelligence'>
-                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio"
-                                       value='willpower'>
-                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio"
-                                       value='perception'>
-                                <input class="sheet-item sheet-favored" name="attr_favored" type="radio"
-                                       value='precision'>
+                                <input class="sheet-item sheet-favored" name="attr_favored_strength" type="checkbox"
+                                       value='1'>
+                                <input class="sheet-item sheet-favored" name="attr_favored_endurance" type="checkbox"
+                                       value='1'>
+                                <input class="sheet-item sheet-favored" name="attr_favored_agility" type="checkbox"
+                                       value='1'>
+                                <input class="sheet-item sheet-favored" name="attr_favored_intelligence" type="checkbox"
+                                       value='1'>
+                                <input class="sheet-item sheet-favored" name="attr_favored_willpower" type="checkbox"
+                                       value='1'>
+                                <input class="sheet-item sheet-favored" name="attr_favored_perception" type="checkbox"
+                                       value='1'>
+                                <input class="sheet-item sheet-favored" name="attr_favored_precision" type="checkbox"
+                                       value='1'>
                                 <div class="sheet-item sheet-label-favored">Favored</div>
                             </div>
                         </div> <!-- grid for primary stats -->
@@ -602,19 +602,22 @@
                                 <div class="sheet-col">
                                     <div class="sheet-row sheet-attributes-left">
                                         Wound Thresh. <input class="sheet-item sheet-Wound-Thresh sheet-big-attr"
+                                                             value="0"
                                                              name="attr_Wound_Thresh" type="text"><br>
                                         Speed <input class="sheet-item sheet-Speed sheet-big-attr" name="attr_Speed"
+                                                     value="0"
                                                      type="text"><br>
                                         <button type='roll'
                                                 value='/roll 1d6 + @{Init_Rating} + ?{Modifier|0} &{tracker}'
                                                 name='roll_InitCheck'></button><!--remove space
                                         -->Init. Rating <input
+                                            value="0"
                                             class="sheet-item sheet-Init-Rating sheet-big-attr"
                                             name="attr_Init_Rating"
                                             type="text"><br>
-                                        Carry Rating <input class="sheet-item sheet-Carry-Rating sheet-big-attr"
+                                        Carry Rating <input class="sheet-item sheet-Carry-Rating sheet-big-attr" value="0"
                                                             name="attr_Carry_Rating" type="text">
-                                        Total Lb(s) <input class="sheet-item sheet-Total-Lb sheet-big-attr"
+                                        Total Lb(s) <input class="sheet-item sheet-Total-Lb sheet-big-attr" value="0"
                                                            name="attr_Total_Lb" type="text">
                                     </div>
 
@@ -623,21 +626,26 @@
                                     <div class="sheet-row sheet-attributes-right">
                                         Health Points <input class="sheet-item sheet-HP" value="0" name="attr_HP"
                                                              type="text"><input class="sheet-item sheet-HP-Max"
+                                                                                value="0"
                                                                                 name="attr_HP_Max"
                                                                                 type="text"><br>
                                         Magicka Points <input class="sheet-item sheet-MP" value="0" name="attr_MP"
                                                               type="text"><input class="sheet-item sheet-MP-Max"
+                                                                                 value="0"
                                                                                  name="attr_MP_Max" type="text"><br>
                                         Stam Points <input class="sheet-item sheet-Stam-P" value="0" name="attr_Stam_P"
                                                            type="text"><input class="sheet-item sheet-Stam-P-Max"
+                                                                              value="0"
                                                                               name="attr_Stam_P_Max"
                                                                               type="text"><br>
                                         Luck Points<input class="sheet-item sheet-Luck-P" value="0" name="attr_Luck_P"
                                                           type="text"><input class="sheet-item sheet-Luck-P-Max"
+                                                                             value="0"
                                                                              name="attr_Luck_P_Max"
                                                                              type="text"><br>
                                         Action Points <input class="sheet-item sheet-Action-P" value="0"
                                                              name="attr_Action_P" type="text"><input
+                                            value="0"
                                             class="sheet-item sheet-Action-P-Max"
                                             name="attr_Action_P_Max" type="text"><br>
 
@@ -652,22 +660,22 @@
                             <div class="sheet-3colrow sheet-AandW">
                                 <div class="sheet-col sheet-left-AandW">
                                     <h3>Head(0)</h3><br>
-                                    AR<input class="sheet-item sheet-Head-AR" name="attr_Head_AR" type="text"><br>
-                                    Lb(s)<input class="sheet-item sheet-Head-Lb" name="attr_Head_Lb" type="text"><br>
-                                    Type<input class="sheet-item sheet-Head-Type" name="attr_Head_Type" type="text"><br>
+                                    AR<input class="sheet-item sheet-Head-AR" value="0" name="attr_Head_AR" type="text"><br>
+                                    Lb(s)<input class="sheet-item sheet-Head-Lb" value="0" name="attr_Head_Lb" type="text"><br>
+                                    Type<input class="sheet-item sheet-Head-Type" value="0" name="attr_Head_Type" type="text"><br>
                                     <h3>Left Arm(8)</h3><br>
-                                    AR<input class="sheet-item sheet-Left-Arm-AR" name="attr_Left_Arm_AR"
+                                    AR<input class="sheet-item sheet-Left-Arm-AR" value="0" name="attr_Left_Arm_AR"
                                              type="text"><br>
-                                    Lb(s)<input class="sheet-item sheet-Left-Arm-Lb" name="attr_Left_Arm_Lb"
+                                    Lb(s)<input class="sheet-item sheet-Left-Arm-Lb" value="0" name="attr_Left_Arm_Lb"
                                                 type="text"><br>
-                                    Type<input class="sheet-item sheet-Left-Arm-Type" name="attr_Left_Arm_Type"
+                                    Type<input class="sheet-item sheet-Left-Arm-Type" value="0" name="attr_Left_Arm_Type"
                                                type="text"><br>
                                     <h3>Left Leg(6)</h3><br>
-                                    AR<input class="sheet-item sheet-Left-Leg-AR" name="attr_Left_Leg_AR"
+                                    AR<input class="sheet-item sheet-Left-Leg-AR" value="0" name="attr_Left_Leg_AR"
                                              type="text"><br>
-                                    Lb(s)<input class="sheet-item sheet-Left-Leg-Lb" name="attr_Left_Leg_Lb"
+                                    Lb(s)<input class="sheet-item sheet-Left-Leg-Lb" value="0" name="attr_Left_Leg_Lb"
                                                 type="text"><br>
-                                    Type<input class="sheet-item sheet-Left-Leg-Type" name="attr_Left_Leg_Type"
+                                    Type<input class="sheet-item sheet-Left-Leg-Type" value="0" name="attr_Left_Leg_Type"
                                                type="text"><br>
                                 </div>
                                 <div class="sheet-col sheet-center-AandW">
@@ -675,20 +683,20 @@
                                 </div>
                                 <div class="sheet-col sheet-right-AandW">
                                     <h3>Body(1-5)</h3><br>
-                                    <input class="sheet-item sheet-Body-AR" name="attr_Body_AR" type="text">AR<br>
-                                    <input class="sheet-item sheet-Body-Lb" name="attr_Body_Lb" type="text">Lb(s)<br>
-                                    <input class="sheet-item sheet-Body-Type" name="attr_Body_Type" type="text">Type<br>
+                                    <input class="sheet-item sheet-Body-AR" value="0" name="attr_Body_AR" type="text">AR<br>
+                                    <input class="sheet-item sheet-Body-Lb" value="0" name="attr_Body_Lb" type="text">Lb(s)<br>
+                                    <input class="sheet-item sheet-Body-Type" value="0" name="attr_Body_Type" type="text">Type<br>
                                     <h3>Right Arm(9)</h3><br>
-                                    <input class="sheet-item sheet-Right-Arm-AR" name="attr_Right_Arm_AR" type="text">AR<br>
-                                    <input class="sheet-item sheet-Right-Arm-Lb" name="attr_Right_Arm_Lb"
+                                    <input class="sheet-item sheet-Right-Arm-AR" value="0" name="attr_Right_Arm_AR" type="text">AR<br>
+                                    <input class="sheet-item sheet-Right-Arm-Lb" value="0" name="attr_Right_Arm_Lb"
                                            type="text">Lb(s)<br>
-                                    <input class="sheet-item sheet-Right-Arm-Type" name="attr_Right_Arm_Type"
+                                    <input class="sheet-item sheet-Right-Arm-Type" value="0" name="attr_Right_Arm_Type"
                                            type="text">Type<br>
                                     <h3>Right Leg(7)</h3><br>
-                                    <input class="sheet-item sheet-Right-Leg-AR" name="attr_Right_Leg_AR" type="text">AR<br>
-                                    <input class="sheet-item sheet-Right-Leg-Lb" name="attr_Right_Leg_Lb"
+                                    <input class="sheet-item sheet-Right-Leg-AR" value="0" name="attr_Right_Leg_AR" type="text">AR<br>
+                                    <input class="sheet-item sheet-Right-Leg-Lb" value="0" name="attr_Right_Leg_Lb"
                                            type="text">Lb(s)<br>
-                                    <input class="sheet-item sheet-Right-Leg-Type" name="attr_Right_Leg_Type"
+                                    <input class="sheet-item sheet-Right-Leg-Type" value="0" name="attr_Right_Leg_Type"
                                            type="text">Type<br>
                                 </div>
                             </div>
