@@ -710,7 +710,7 @@
                                 <td><input class="sheet-item" name="attr_Acrobatics_Base_TN" type="text"></td>
                                 <td>
                                     <button name="roll_AcrobaticsRoll" type="roll"
-                                            value="&{template:test} {{rollname=^{Roll Acrobatics}}} {{roll=[[1d100]]}} {{target=[[@{Acrobatics_Rank} + ?{test?|Strength,@{strength}|Strength,@{agility}} + ?{Modifier}]]}}"></button>
+                                            value="&{template:test} {{rollname=^{Roll Acrobatics}}} {{roll=[[((@{Acrobatics_Rank} + ?{Which stat do you want to use?|Strength,@{strength}|Agility,@{agility}} + ?{Modifier|0}) - 1d100) / 10]]}} {{target=[[@{Acrobatics_Rank} + ?{Which stat do you want to use?|Strength,@{strength}|Agility,@{agility}} + ?{Modifier|0}]]}}"></button>
                                 </td>
                             </tr>
                             <tr>
@@ -1149,15 +1149,25 @@
         <tr>
             <td><span class="tcat">Target: </span>{{target}}</td></tr>
         {{/target}}
-        {{#rollGreater() roll 50}}
+        {{#rollGreater() roll 0}}
         <tr>
             <td><span class="tcat">Success: </span>{{roll}} <span>degree of success</span></td>
         </tr>
-        {{/rollGreater() roll 50}}
-        {{#rollLess() roll 50}}
+        {{/rollGreater() roll 0}}
+        {{#rollLess() roll 0}}
         <tr>
             <td><span class="tcat">Failure: </span>{{roll}} <span>degree of failure</span></td>
         </tr>
-        {{/rollLess() roll 50}}
+        {{/rollLess() roll 0}}
+        {{#rollWasCrit() roll}}
+        <tr>
+            <td><span class="tcat">That's a crit!! </span></td>
+        </tr>
+        {{/rollWasCrit() roll}}
+        {{#rollWasFumble() roll}}
+        <tr>
+            <td><span class="tcat">Yikes, that's a critical fail... </span></td>
+        </tr>
+        {{/rollWasFumble() roll}}
     </table>
 </rolltemplate>
