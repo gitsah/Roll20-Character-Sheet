@@ -44,9 +44,12 @@ div.sheet-attributes {
     text-align: right;
 }
 
-div.sheet-attributes input{
-    width: 40%;
-    margin-right: 11px;
+div.sheet-attributes-left input{
+    width:80px;
+}
+
+div.sheet-attributes-right input{
+    width: 40px;
 }
 
 div.sheet-AandW input {
