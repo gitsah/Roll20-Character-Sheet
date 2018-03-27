@@ -595,9 +595,13 @@
                                                              name="attr_Wound_Thresh" type="text"><br>
                                         Speed <input class="sheet-item sheet-Speed sheet-big-attr" name="attr_Speed"
                                                      type="text"><br>
-                                        Init. Rating <input class="sheet-item sheet-Init-Rating sheet-big-attr"
-                                                            name="attr_Init_Rating"
-                                                            type="text"><br>
+                                        <button type='roll'
+                                                value='/roll 1d6 + @{Init_Rating} + ?{Modifier|0} &{tracker}'
+                                                name='roll_InitCheck'></button><!--remove space
+                                        -->Init. Rating <input
+                                            class="sheet-item sheet-Init-Rating sheet-big-attr"
+                                            name="attr_Init_Rating"
+                                            type="text"><br>
                                         Carry Rating <input class="sheet-item sheet-Carry-Rating sheet-big-attr"
                                                             name="attr_Carry_Rating" type="text">
                                         Total Lb(s) <input class="sheet-item sheet-Total-Lb sheet-big-attr"
@@ -622,7 +626,8 @@
                                                            type="text"><input class="sheet-item sheet-Luck-P-Max"
                                                                               name="attr_Luck_P_Max"
                                                                               type="text"><br>
-                                        Action Points <input class="sheet-item sheet-Action-P" value="0" name="attr_Action_P" type="text"><input
+                                        Action Points <input class="sheet-item sheet-Action-P" value="0"
+                                                             name="attr_Action_P" type="text"><input
                                             class="sheet-item sheet-Action-P-Max"
                                             name="attr_Action_P_Max" type="text"><br>
 
@@ -688,6 +693,7 @@
                                 <th><h3>Rank</h3></th>
                                 <th><h3>Bonus</h3></th>
                                 <th><h3>Base TN</h3></th>
+                                <th><h3>Roll</h3></th>
                             </tr>
                             <tr>
                                 <td>Acrobatics</td>
@@ -702,10 +708,13 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Acrobatics_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Acrobatics_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_AcrobaticsRoll" type="roll"
+                                            value="&{template:test} {{rollname=^{Roll Acrobatics}}} {{roll=[[1d100]]}} {{target=[[@{Acrobatics_Rank} + ?{test?|Strength,@{strength}|Strength,@{agility}} + ?{Modifier}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Alchemy</td>
-                                <
                                 <td><select name="attr_Alchemy_Rank">
                                     <option value="-20">Untrained</option>
                                     <option value="0">Novice</option>
@@ -1129,4 +1138,26 @@
         </div>
 
     </div> <!-- wrapper -->
-</div> <!-- characteristics -->
+</div> <!-- characteristics aka sheet end -->
+
+<!--Roll Template test-->
+<rolltemplate class="sheet-rolltemplate-test">
+    <table>
+        <tr><th>{{rollname}}</th></tr>
+        <td><img src="http://i.imgur.com/g1SVcwZ.png" height="100%" width="auto" max-width="100px"></td>
+        {{#target}}
+        <tr>
+            <td><span class="tcat">Target: </span>{{target}}</td></tr>
+        {{/target}}
+        {{#rollGreater() roll 50}}
+        <tr>
+            <td><span class="tcat">Success: </span>{{roll}} <span>degree of success</span></td>
+        </tr>
+        {{/rollGreater() roll 50}}
+        {{#rollLess() roll 50}}
+        <tr>
+            <td><span class="tcat">Failure: </span>{{roll}} <span>degree of failure</span></td>
+        </tr>
+        {{/rollLess() roll 50}}
+    </table>
+</rolltemplate>

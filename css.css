@@ -45,11 +45,11 @@ div.sheet-attributes {
 }
 
 div.sheet-attributes-left input{
-    width:80px;
+    width:72px;
 }
 
 div.sheet-attributes-right input{
-    width: 40px;
+    width: 36px;
 }
 
 div.sheet-AandW input {
@@ -282,3 +282,51 @@ div.sheet-tab-content {
     margin: 2px 0 0 5px;
     padding: 5px;
 }*/
+
+.sheet-rolltemplate-test table {
+    width: 100%;
+    padding: 2px;
+    background:url(http://i.imgur.com/VmcMVk2.png) top left repeat;
+}
+
+.sheet-rolltemplate-test .userscript-tcat {
+    font-weight: bold;
+}
+
+.sheet-rolltemplate-test th {
+    color: black;
+    padding-left: 5px;
+    padding-top: 5px;
+    line-height: 1.1em;
+    font-size: 1.5em;
+    text-align: left;
+    font-family: Caslon Antique, Helvetica,"Arial", sans-serif;
+    text-transform: capitalize;
+}
+
+.sheet-rolltemplate-test td {
+    padding-left: 5px;
+    font-family: Berylium-Regular, Helvetica,"Arial", sans-serif;
+    font-size: 15px;
+    color: rgb(80, 80, 80);
+}
+
+.sheet-rolltemplate-test .inlinerollresult  {
+    display: inline-block;
+    min-width: 1.5em;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+}
+
+.sheet-rolltemplate-test .inlinerollresult.fullcrit {
+    border: 2px solid #B31515;
+}
+
+.sheet-rolltemplate-test .inlinerollresult.fullfail {
+    border: 2px solid #3FB315;
+}
+
+.sheet-rolltemplate-test .inlinerollresult.importantroll {
+    border: 2px solid #4A57ED;
+}
