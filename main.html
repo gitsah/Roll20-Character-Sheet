@@ -728,7 +728,7 @@
                                 <td><input class="sheet-item" name="attr_Acrobatics_Base_TN" type="text"></td>
                                 <td>
                                     <button name="roll_AcrobaticsRoll" type="roll"
-                                            value="&{template:test} {{rollname=^{Roll Acrobatics}}} {{roll=[[((@{Acrobatics_Rank} + ?{Which stat do you want to use?|Strength,@{strength}|Agility,@{agility}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Acrobatics_Rank} + ?{Which stat do you want to use?|Strength,@{strength}|Agility,@{agility}} + ?{Modifier|0}]]}}"></button>
+                                            value="&{template:test} {{rollname=^{Roll Acrobatics}}} {{roll=[[((@{Acrobatics_Rank} + ?{Which characteristic?|Strength,@{strength}|Agility,@{agility}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Acrobatics_Rank} + ?{Which characteristic?|Strength,@{strength}|Agility,@{agility}} + ?{Modifier|0}]]}}"></button>
                                 </td>
                             </tr>
                             <tr>
