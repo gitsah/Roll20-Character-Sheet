@@ -97,7 +97,7 @@
                 Acrobatics_Bonus: values.Acrobatics_Rank
             });
             setAttrs({
-                Acrobatics_Base_TN: "str:" + (Number(values.Acrobatics_Rank) + Number(values.strength)) + "/ag:"
+                Acrobatics_Base_TN: "Str:" + (Number(values.Acrobatics_Rank) + Number(values.strength)) + "/Ag:"
                 + (Number(values.Acrobatics_Rank) + Number(values.agility))
             });
         });
@@ -110,7 +110,7 @@
                 Alchemy_Bonus: values.Alchemy_Rank
             });
             setAttrs({
-                Alchemy_Base_TN: "int:" + (Number(values.Alchemy_Rank) + Number(values.intelligence))
+                Alchemy_Base_TN: "Int:" + (Number(values.Alchemy_Rank) + Number(values.intelligence))
             });
         });
     });
@@ -122,7 +122,7 @@
                 Alteration_Bonus: values.Alteration_Rank
             });
             setAttrs({
-                Alteration_Base_TN: "wp:" + (Number(values.Alteration_Rank) + Number(values.willpower))
+                Alteration_Base_TN: "Wp:" + (Number(values.Alteration_Rank) + Number(values.willpower))
             });
         });
     });
@@ -134,7 +134,7 @@
                 Athletics_Bonus: values.Athletics_Rank
             });
             setAttrs({
-                Athletics_Base_TN: "str:" + (Number(values.Athletics_Rank) + Number(values.strength)) + "/end:"
+                Athletics_Base_TN: "Str:" + (Number(values.Athletics_Rank) + Number(values.strength)) + "/End:"
                 + (Number(values.Athletics_Rank) + Number(values.endurance))
             });
         });
@@ -142,27 +142,27 @@
 
     //Base TN for Command
     on("change:Command_Rank", function () {
-        getAttrs(["Command_Rank", "strength", "intelligence", "precision"], function (values) {
+        getAttrs(["Command_Rank", "strength", "intelligence", "personality"], function (values) {
             setAttrs({
                 Command_Bonus: values.Command_Rank
             });
             setAttrs({
-                Command_Base_TN: "str:" + (Number(values.Command_Rank) + Number(values.strength)) + "/int:"
-                + (Number(values.Command_Rank) + Number(values.intelligence)) + "/prs:"
-                + (Number(values.Command_Rank) + Number(values.precision))
+                Command_Base_TN: "Str:" + (Number(values.Command_Rank) + Number(values.strength)) + "/Int:"
+                + (Number(values.Command_Rank) + Number(values.intelligence)) + "/Prs:"
+                + (Number(values.Command_Rank) + Number(values.personality))
             });
         });
     });
 
     //Base TN for Commerce
     on("change:Commerce_Rank", function () {
-        getAttrs(["Commerce_Rank", "intelligence", "precision"], function (values) {
+        getAttrs(["Commerce_Rank", "intelligence", "personality"], function (values) {
             setAttrs({
                 Commerce_Bonus: values.Commerce_Rank
             });
             setAttrs({
-                Commerce_Base_TN: "int:" + (Number(values.Commerce_Rank) + Number(values.intelligence)) + "/prs:"
-                + (Number(values.Commerce_Rank) + Number(values.precision))
+                Commerce_Base_TN: "Int:" + (Number(values.Commerce_Rank) + Number(values.intelligence)) + "/Prs:"
+                + (Number(values.Commerce_Rank) + Number(values.personality))
             });
         });
     });
@@ -174,20 +174,20 @@
                 Conjuration_Bonus: values.Conjuration_Rank
             });
             setAttrs({
-                Conjuration_Base_TN: "wp:" + (Number(values.Conjuration_Rank) + Number(values.willpower))
+                Conjuration_Base_TN: "Wp:" + (Number(values.Conjuration_Rank) + Number(values.willpower))
             });
         });
     });
 
     //Base TN for Deceive
     on("change:Deceive_Rank", function () {
-        getAttrs(["Deceive_Rank", "intelligence", "precision"], function (values) {
+        getAttrs(["Deceive_Rank", "intelligence", "personality"], function (values) {
             setAttrs({
                 Deceive_Bonus: values.Deceive_Rank
             });
             setAttrs({
-                Deceive_Base_TN: "int:" + (Number(values.Deceive_Rank) + Number(values.intelligence)) + "/prs:"
-                + (Number(values.Deceive_Rank) + Number(values.precision))
+                Deceive_Base_TN: "Int:" + (Number(values.Deceive_Rank) + Number(values.intelligence)) + "/Prs:"
+                + (Number(values.Deceive_Rank) + Number(values.personality))
             });
         });
     });
@@ -199,7 +199,7 @@
                 Destruction_Bonus: values.Destruction_Rank
             });
             setAttrs({
-                Destruction_Base_TN: "wp:" + (Number(values.Destruction_Rank) + Number(values.willpower))
+                Destruction_Base_TN: "Wp:" + (Number(values.Destruction_Rank) + Number(values.willpower))
             });
         });
     });
@@ -211,7 +211,7 @@
                 Enchant_Bonus: values.Enchant_Rank
             });
             setAttrs({
-                Enchant_Base_TN: "int:" + (Number(values.Enchant_Rank) + Number(values.intelligence))
+                Enchant_Base_TN: "Int:" + (Number(values.Enchant_Rank) + Number(values.intelligence))
             });
         });
     });
@@ -223,7 +223,7 @@
                 Evade_Bonus: values.Evade_Rank
             });
             setAttrs({
-                Evade_Base_TN: "ag:" + (Number(values.Evade_Rank) + Number(values.agility))
+                Evade_Base_TN: "Ag:" + (Number(values.Evade_Rank) + Number(values.agility))
             });
         });
     });
@@ -235,7 +235,7 @@
                 Illusion_Bonus: values.Illusion_Rank
             });
             setAttrs({
-                Illusion_Base_TN: "wp:" + (Number(values.Illusion_Rank) + Number(values.willpower))
+                Illusion_Base_TN: "Wp:" + (Number(values.Illusion_Rank) + Number(values.willpower))
             });
         });
     });
@@ -247,7 +247,7 @@
                 Investigate_Bonus: values.Investigate_Rank
             });
             setAttrs({
-                Investigate_Base_TN: "int:" + (Number(values.Investigate_Rank) + Number(values.intelligence)) + "/prc:"
+                Investigate_Base_TN: "Int:" + (Number(values.Investigate_Rank) + Number(values.intelligence)) + "/Prc:"
                 + (Number(values.Investigate_Rank) + Number(values.perception))
             });
         });
@@ -260,7 +260,7 @@
                 Logic_Bonus: values.Logic_Rank
             });
             setAttrs({
-                Logic_Base_TN: "int:" + (Number(values.Logic_Rank) + Number(values.intelligence)) + "/prc:"
+                Logic_Base_TN: "Int:" + (Number(values.Logic_Rank) + Number(values.intelligence)) + "/Prc:"
                 + (Number(values.Logic_Rank) + Number(values.perception))
             });
         });
@@ -273,7 +273,7 @@
                 Lore_Bonus: values.Lore_Rank
             });
             setAttrs({
-                Lore_Base_TN: "int:" + (Number(values.Lore_Rank) + Number(values.intelligence))
+                Lore_Base_TN: "Int:" + (Number(values.Lore_Rank) + Number(values.intelligence))
             });
         });
     });
@@ -285,7 +285,7 @@
                 Mysticism_Bonus: values.Mysticism_Rank
             });
             setAttrs({
-                Mysticism_Base_TN: "wp:" + (Number(values.Mysticism_Rank) + Number(values.willpower))
+                Mysticism_Base_TN: "Wp:" + (Number(values.Mysticism_Rank) + Number(values.willpower))
             });
         });
     });
@@ -297,7 +297,7 @@
                 Navigate_Bonus: values.Navigate_Rank
             });
             setAttrs({
-                Navigate_Base_TN: "int:" + (Number(values.Navigate_Rank) + Number(values.intelligence)) + "/prc:"
+                Navigate_Base_TN: "Int:" + (Number(values.Navigate_Rank) + Number(values.intelligence)) + "/Prc:"
                 + (Number(values.Navigate_Rank) + Number(values.perception))
             });
         });
@@ -310,7 +310,7 @@
                 Necromancy_Bonus: values.Necromancy_Rank
             });
             setAttrs({
-                Necromancy_Base_TN: "int:" + (Number(values.Necromancy_Rank) + Number(values.intelligence))
+                Necromancy_Base_TN: "Int:" + (Number(values.Necromancy_Rank) + Number(values.intelligence))
             });
         });
     });
@@ -322,20 +322,20 @@
                 Observe_Bonus: values.Observe_Rank
             });
             setAttrs({
-                Observe_Base_TN: "prc:" + (Number(values.Observe_Rank) + Number(values.perception))
+                Observe_Base_TN: "Prc:" + (Number(values.Observe_Rank) + Number(values.perception))
             });
         });
     });
 
     //Base TN for Persuade
     on("change:Persuade_Rank", function () {
-        getAttrs(["Persuade_Rank", "strength", "precision"], function (values) {
+        getAttrs(["Persuade_Rank", "strength", "personality"], function (values) {
             setAttrs({
                 Persuade_Bonus: values.Persuade_Rank
             });
             setAttrs({
-                Persuade_Base_TN: "str:" + (Number(values.Persuade_Rank) + Number(values.strength)) + "/prs:"
-                + (Number(values.Persuade_Rank) + Number(values.precision))
+                Persuade_Base_TN: "Str:" + (Number(values.Persuade_Rank) + Number(values.strength)) + "/Prs:"
+                + (Number(values.Persuade_Rank) + Number(values.personality))
             });
         });
     });
@@ -347,7 +347,7 @@
                 Restoration_Bonus: values.Restoration_Rank
             });
             setAttrs({
-                Restoration_Base_TN: "wp:" + (Number(values.Restoration_Rank) + Number(values.willpower))
+                Restoration_Base_TN: "Wp:" + (Number(values.Restoration_Rank) + Number(values.willpower))
             });
         });
     });
@@ -359,7 +359,7 @@
                 Ride_Bonus: values.Ride_Rank
             });
             setAttrs({
-                Ride_Base_TN: "ag:" + (Number(values.Ride_Rank) + Number(values.agility))
+                Ride_Base_TN: "Ag:" + (Number(values.Ride_Rank) + Number(values.agility))
             });
         });
     });
@@ -371,8 +371,8 @@
                 Shehai_Shen_She_Ru_Bonus: values.Shehai_Shen_She_Ru_Rank
             });
             setAttrs({
-                Shehai_Shen_She_Ru_Base_TN: "str:" + (Number(values.Shehai_Shen_She_Ru_Rank) + Number(values.strength))
-                + "/ag:" + (Number(values.Shehai_Shen_She_Ru_Rank) + Number(values.agility)) + "/wp:"
+                Shehai_Shen_She_Ru_Base_TN: "Str:" + (Number(values.Shehai_Shen_She_Ru_Rank) + Number(values.strength))
+                + "/Ag:" + (Number(values.Shehai_Shen_She_Ru_Rank) + Number(values.agility)) + "/Wp:"
                 + (Number(values.Shehai_Shen_She_Ru_Rank) + Number(values.willpower))
             });
         });
@@ -385,7 +385,7 @@
                 Stealth_Bonus: values.Stealth_Rank
             });
             setAttrs({
-                Stealth_Base_TN: "ag:" + (Number(values.Stealth_Rank) + Number(values.agility)) + "/prc:"
+                Stealth_Base_TN: "Ag:" + (Number(values.Stealth_Rank) + Number(values.agility)) + "/Prc:"
                 + (Number(values.Stealth_Rank) + Number(values.perception))
             });
         });
@@ -398,7 +398,7 @@
                 Subterfuge_Bonus: values.Subterfuge_Rank
             });
             setAttrs({
-                Subterfuge_Base_TN: "ag:" + (Number(values.Subterfuge_Rank) + Number(values.agility)) + "/int:"
+                Subterfuge_Base_TN: "Ag:" + (Number(values.Subterfuge_Rank) + Number(values.agility)) + "/Int:"
                 + (Number(values.Subterfuge_Rank) + Number(values.intelligence))
             });
         });
@@ -411,7 +411,7 @@
                 Survival_Bonus: values.Survival_Rank
             });
             setAttrs({
-                Survival_Base_TN: "int:" + (Number(values.Survival_Rank) + Number(values.intelligence)) + "/prc:"
+                Survival_Base_TN: "Int:" + (Number(values.Survival_Rank) + Number(values.intelligence)) + "/Prc:"
                 + (Number(values.Survival_Rank) + Number(values.perception))
             });
         });
@@ -424,7 +424,7 @@
                 Thuum_Bonus: values.Thuum_Rank
             });
             setAttrs({
-                Thuum_Base_TN: "wp:" + (Number(values.Thuum_Rank) + Number(values.willpower))
+                Thuum_Base_TN: "Wp:" + (Number(values.Thuum_Rank) + Number(values.willpower))
             });
         });
     });
@@ -570,11 +570,30 @@
                                 <input class="sheet-item sheet-stats-str" value="0" name="attr_strength" type="text">
                                 <input class="sheet-item sheet-stats-end" value="0" name="attr_endurance" type="text">
                                 <input class="sheet-item sheet-stats-ag" value="0" name="attr_agility" type="text">
-                                <input class="sheet-item sheet-stats-int" value="0" name="attr_intelligence" type="text">
+                                <input class="sheet-item sheet-stats-int" value="0" name="attr_intelligence"
+                                       type="text">
                                 <input class="sheet-item sheet-stats-wp" value="0" name="attr_willpower" type="text">
                                 <input class="sheet-item sheet-stats-prc" value="0" name="attr_perception" type="text">
-                                <input class="sheet-item sheet-stats-prs" value="0" name="attr_precision" type="text">
+                                <input class="sheet-item sheet-stats-prs" value="0" name="attr_personality" type="text">
                                 <input class="sheet-item sheet-stats-lck" value="0" name="attr_luck" type="text">
+                            </div>
+                            <div class="sheet-item sheet-stat-rolls-grid">
+                                <button name="roll_StrengthRoll" type="roll"
+                                        value="&{template:skills} {{rollname=Roll Strength}} {{roll=[[((@{strength} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{strength} + ?{Modifier|0}]]}}"></button>
+                                <button name="roll_EnduranceRoll" type="roll"
+                                        value="&{template:skills} {{rollname=Roll Endurance}} {{roll=[[((@{endurance} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{endurance} + ?{Modifier|0}]]}}"></button>
+                                <button name="roll_AgilityRoll" type="roll"
+                                        value="&{template:skills} {{rollname=Roll Agility}} {{roll=[[((@{agility} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{agility} + ?{Modifier|0}]]}}"></button>
+                                <button name="roll_IntelligenceRoll" type="roll"
+                                        value="&{template:skills} {{rollname=Roll Intelligence}} {{roll=[[((@{intelligence} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{intelligence} + ?{Modifier|0}]]}}"></button>
+                                <button name="roll_WillpowerRoll" type="roll"
+                                        value="&{template:skills} {{rollname=Roll Willpower}} {{roll=[[((@{willpower} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{willpower} + ?{Modifier|0}]]}}"></button>
+                                <button name="roll_PerceptionRoll" type="roll"
+                                        value="&{template:skills} {{rollname=Roll Perception}} {{roll=[[((@{perception} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{perception} + ?{Modifier|0}]]}}"></button>
+                                <button name="roll_PersonalityRoll" type="roll"
+                                        value="&{template:skills} {{rollname=Roll Personality}} {{roll=[[((@{personality} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{personality} + ?{Modifier|0}]]}}"></button>
+                                <button name="roll_LuckRoll" type="roll"
+                                        value="&{template:skills} {{rollname=Roll Luck}} {{roll=[[((@{luck} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{luck} + ?{Modifier|0}]]}}"></button>
                             </div>
                             <div class="sheet-item sheet-favored-grid">
                                 <input class="sheet-item sheet-favored" name="attr_favored_strength" type="checkbox"
@@ -589,7 +608,7 @@
                                        value='1'>
                                 <input class="sheet-item sheet-favored" name="attr_favored_perception" type="checkbox"
                                        value='1'>
-                                <input class="sheet-item sheet-favored" name="attr_favored_precision" type="checkbox"
+                                <input class="sheet-item sheet-favored" name="attr_favored_personality" type="checkbox"
                                        value='1'>
                                 <div class="sheet-item sheet-label-favored">Favored</div>
                             </div>
@@ -615,7 +634,8 @@
                                             class="sheet-item sheet-Init-Rating sheet-big-attr"
                                             name="attr_Init_Rating"
                                             type="text"><br>
-                                        Carry Rating <input class="sheet-item sheet-Carry-Rating sheet-big-attr" value="0"
+                                        Carry Rating <input class="sheet-item sheet-Carry-Rating sheet-big-attr"
+                                                            value="0"
                                                             name="attr_Carry_Rating" type="text">
                                         Total Lb(s) <input class="sheet-item sheet-Total-Lb sheet-big-attr" value="0"
                                                            name="attr_Total_Lb" type="text">
@@ -661,21 +681,25 @@
                                 <div class="sheet-col sheet-left-AandW">
                                     <h3>Head(0)</h3><br>
                                     AR<input class="sheet-item sheet-Head-AR" value="0" name="attr_Head_AR" type="text"><br>
-                                    Lb(s)<input class="sheet-item sheet-Head-Lb" value="0" name="attr_Head_Lb" type="text"><br>
-                                    Type<input class="sheet-item sheet-Head-Type" value="0" name="attr_Head_Type" type="text"><br>
+                                    Lb(s)<input class="sheet-item sheet-Head-Lb" value="0" name="attr_Head_Lb"
+                                                type="text"><br>
+                                    Type<input class="sheet-item sheet-Head-Type" value="0" name="attr_Head_Type"
+                                               type="text"><br>
                                     <h3>Left Arm(8)</h3><br>
                                     AR<input class="sheet-item sheet-Left-Arm-AR" value="0" name="attr_Left_Arm_AR"
                                              type="text"><br>
                                     Lb(s)<input class="sheet-item sheet-Left-Arm-Lb" value="0" name="attr_Left_Arm_Lb"
                                                 type="text"><br>
-                                    Type<input class="sheet-item sheet-Left-Arm-Type" value="0" name="attr_Left_Arm_Type"
+                                    Type<input class="sheet-item sheet-Left-Arm-Type" value="0"
+                                               name="attr_Left_Arm_Type"
                                                type="text"><br>
                                     <h3>Left Leg(6)</h3><br>
                                     AR<input class="sheet-item sheet-Left-Leg-AR" value="0" name="attr_Left_Leg_AR"
                                              type="text"><br>
                                     Lb(s)<input class="sheet-item sheet-Left-Leg-Lb" value="0" name="attr_Left_Leg_Lb"
                                                 type="text"><br>
-                                    Type<input class="sheet-item sheet-Left-Leg-Type" value="0" name="attr_Left_Leg_Type"
+                                    Type<input class="sheet-item sheet-Left-Leg-Type" value="0"
+                                               name="attr_Left_Leg_Type"
                                                type="text"><br>
                                 </div>
                                 <div class="sheet-col sheet-center-AandW">
@@ -685,15 +709,18 @@
                                     <h3>Body(1-5)</h3><br>
                                     <input class="sheet-item sheet-Body-AR" value="0" name="attr_Body_AR" type="text">AR<br>
                                     <input class="sheet-item sheet-Body-Lb" value="0" name="attr_Body_Lb" type="text">Lb(s)<br>
-                                    <input class="sheet-item sheet-Body-Type" value="0" name="attr_Body_Type" type="text">Type<br>
+                                    <input class="sheet-item sheet-Body-Type" value="0" name="attr_Body_Type"
+                                           type="text">Type<br>
                                     <h3>Right Arm(9)</h3><br>
-                                    <input class="sheet-item sheet-Right-Arm-AR" value="0" name="attr_Right_Arm_AR" type="text">AR<br>
+                                    <input class="sheet-item sheet-Right-Arm-AR" value="0" name="attr_Right_Arm_AR"
+                                           type="text">AR<br>
                                     <input class="sheet-item sheet-Right-Arm-Lb" value="0" name="attr_Right_Arm_Lb"
                                            type="text">Lb(s)<br>
                                     <input class="sheet-item sheet-Right-Arm-Type" value="0" name="attr_Right_Arm_Type"
                                            type="text">Type<br>
                                     <h3>Right Leg(7)</h3><br>
-                                    <input class="sheet-item sheet-Right-Leg-AR" value="0" name="attr_Right_Leg_AR" type="text">AR<br>
+                                    <input class="sheet-item sheet-Right-Leg-AR" value="0" name="attr_Right_Leg_AR"
+                                           type="text">AR<br>
                                     <input class="sheet-item sheet-Right-Leg-Lb" value="0" name="attr_Right_Leg_Lb"
                                            type="text">Lb(s)<br>
                                     <input class="sheet-item sheet-Right-Leg-Type" value="0" name="attr_Right_Leg_Type"
@@ -701,7 +728,100 @@
                                 </div>
                             </div>
                         </div><!-- armor and wounds -->
+                        <!-- weapons -->
+                        <div class="sheet-item sheet-Weapons">
+                            <h2>Weapons</h2>
+                            <h4>Melee</h4>
+                            <table>
+                                <tr>
+                                    <th><h3>Name</h3></th>
+                                    <th><h3>Damage</h3></th>
+                                    <th><h3>Handedness</h3></th>
+                                    <th><h3>Reach</h3></th>
+                                    <th><h3>Weight</h3></th>
+                                    <th><h3>Qualities</h3></th>
+                                </tr>
+                                <tr>
+                                    <td><input class="sheet-item" name="attr_MeleeWep1_Name" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep1_Damage" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep1_Handedness" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep1_Reach" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep1_Weight" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep1_Qualities" type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="sheet-item" name="attr_MeleeWep2_Name" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep2_Damage" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep2_Handedness" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep2_Reach" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep2_Weight" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep2_Qualities" type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="sheet-item" name="attr_MeleeWep3_Name" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep3_Damage" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep3_Handedness" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep3_Reach" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep3_Weight" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep3_Qualities" type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="sheet-item" name="attr_MeleeWep4_Name" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep4_Damage" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep4_Handedness" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep4_Reach" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep4_Weight" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_MeleeWep4_Qualities" type="text"></td>
+                                </tr>
+                            </table>
+
+                            <h4>Ranged</h4>
+                            <table>
+                                <tr>
+                                    <th><h3>Name</h3></th>
+                                    <th><h3>Damage</h3></th>
+                                    <th><h3>Handedness</h3></th>
+                                    <th><h3>Range</h3></th>
+                                    <th><h3>Weight</h3></th>
+                                    <th><h3>Qualities</h3></th>
+                                </tr>
+                                <tr>
+                                    <td><input class="sheet-item" name="attr_RangedWep1_Name" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep1_Damage" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep1_Handedness" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep1_Range" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep1_Weight" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep1_Qualities" type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="sheet-item" name="attr_RangedWep2_Name" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep2_Damage" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep2_Handedness" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep2_Range" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep2_Weight" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep2_Qualities" type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="sheet-item" name="attr_RangedWep3_Name" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep3_Damage" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep3_Handedness" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep3_Range" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep3_Weight" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep3_Qualities" type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="sheet-item" name="attr_RangedWep4_Name" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep4_Damage" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep4_Handedness" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep4_Range" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep4_Weight" type="text"></td>
+                                    <td><input class="sheet-item" name="attr_RangedWep4_Qualities" type="text"></td>
+                                </tr>
+
+                            </table>
+                        </div><!-- weapons -->
                     </div> <!-- left outer col -->
+
                     <!-- right outer col -->
                     <div class="sheet-col sheet-right-outer">
                         <h2>Skills & Specializations</h2>
@@ -728,7 +848,7 @@
                                 <td><input class="sheet-item" name="attr_Acrobatics_Base_TN" type="text"></td>
                                 <td>
                                     <button name="roll_AcrobaticsRoll" type="roll"
-                                            value="&{template:test} {{rollname=^{Roll Acrobatics}}} {{roll=[[((@{Acrobatics_Rank} + ?{Which characteristic?|Strength,@{strength}|Agility,@{agility}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Acrobatics_Rank} + ?{Which characteristic?|Strength,@{strength}|Agility,@{agility}} + ?{Modifier|0}]]}}"></button>
+                                            value="&{template:skills} {{rollname=Roll Acrobatics}} {{roll=[[((@{Acrobatics_Rank} + ?{Which characteristic?|Strength,@{strength}|Agility,@{agility}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Acrobatics_Rank} + ?{Which characteristic?|Strength,@{strength}|Agility,@{agility}} + ?{Modifier|0}]]}}"></button>
                                 </td>
                             </tr>
                             <tr>
@@ -744,6 +864,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Alchemy_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Alchemy_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_AlchemyRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Alchemy}} {{roll=[[((@{Alchemy_Rank} + @{intelligence} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Alchemy_Rank} + @{intelligence} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Alteration</td>
@@ -758,6 +882,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Alteration_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Alteration_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_AlterationRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Alteration}} {{roll=[[((@{Alteration_Rank} + @{willpower} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Alteration_Rank} + @{willpower} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Athletics</td>
@@ -772,6 +900,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Athletics_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Athletics_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_AthleticsRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Athletics}} {{roll=[[((@{Athletics_Rank} + ?{Which characteristic?|Strength,@{strength}|Endurance,@{endurance}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Athletics_Rank} + ?{Which characteristic?|Strength,@{strength}|Endurance,@{endurance}} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Command</td>
@@ -786,6 +918,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Command_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Command_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_CommandRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Command}} {{roll=[[((@{Command_Rank} + ?{Which characteristic?|Strength,@{strength}|Intelligence,@{intelligence}|Personality,@{personality}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Command_Rank} + ?{Which characteristic?|Strength,@{strength}|Intelligence,@{intelligence}|Personality,@{personality}} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Commerce</td>
@@ -800,6 +936,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Commerce_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Commerce_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_CommerceRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Commerce}} {{roll=[[((@{Commerce_Rank} + ?{Which characteristic?|Intelligence,@{intelligence}|Personality,@{personality}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Commerce_Rank} + ?{Which characteristic?|Intelligence,@{intelligence}|Personality,@{personality}} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Conjuration</td>
@@ -814,6 +954,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Conjuration_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Conjuration_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_ConjurationRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Conjuration}} {{roll=[[((@{Conjuration_Rank} + @{willpower} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Conjuration_Rank} + @{willpower} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Deceive</td>
@@ -828,6 +972,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Deceive_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Deceive_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_DeceiveRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Deceive}} {{roll=[[((@{Deceive_Rank} + ?{Which characteristic?|Intelligence,@{intelligence}|Personality,@{personality}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Deceive_Rank} + ?{Which characteristic?|Intelligence,@{intelligence}|Personality,@{personality}} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Destruction</td>
@@ -842,6 +990,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Destruction_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Destruction_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_DestructionRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Destruction}} {{roll=[[((@{Destruction_Rank} + @{willpower} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Destruction_Rank} + @{willpower} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Enchant</td>
@@ -856,6 +1008,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Enchant_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Enchant_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_EnchantRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Enchant}} {{roll=[[((@{Enchant_Rank} + @{intelligence} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Enchant_Rank} + @{intelligence} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Evade</td>
@@ -870,6 +1026,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Evade_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Evade_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_EvadeRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Evade}} {{roll=[[((@{Evade_Rank} + @{agility} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Evade_Rank} + @{agility} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Illusion</td>
@@ -884,6 +1044,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Illusion_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Illusion_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_IllusionRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Illusion}} {{roll=[[((@{Illusion_Rank} + @{willpower} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Illusion_Rank} + @{willpower} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Investigate</td>
@@ -898,6 +1062,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Investigate_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Investigate_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_InvestigateRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Investigate}} {{roll=[[((@{Investigate_Rank} + ?{Which characteristic?|Intelligence,@{intelligence}|Perception,@{perception}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Investigate_Rank} + ?{Which characteristic?|Intelligence,@{intelligence}|Perception,@{perception}} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Logic</td>
@@ -912,6 +1080,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Logic_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Logic_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_LogicRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Logic}} {{roll=[[((@{Logic_Rank} + ?{Which characteristic?|Intelligence,@{intelligence}|Perception,@{perception}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Logic_Rank} + ?{Which characteristic?|Intelligence,@{intelligence}|Perception,@{perception}} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Lore</td>
@@ -926,6 +1098,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Lore_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Lore_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_LoreRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Lore}} {{roll=[[((@{Lore_Rank} + @{intelligence} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Lore_Rank} + @{intelligence} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Mysticism</td>
@@ -940,6 +1116,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Mysticism_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Mysticism_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_MysticismRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Mysticism}} {{roll=[[((@{Mysticism_Rank} + @{willpower} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Mysticism_Rank} + @{willpower} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Navigate</td>
@@ -954,6 +1134,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Navigate_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Navigate_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_NavigateRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Navigate}} {{roll=[[((@{Navigate_Rank} + ?{Which characteristic?|Intelligence,@{intelligence}|Perception,@{perception}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Navigate_Rank} + ?{Which characteristic?|Intelligence,@{intelligence}|Perception,@{perception}} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Necromancy</td>
@@ -968,6 +1152,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Necromancy_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Necromancy_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_NecromancyRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Necromancy}} {{roll=[[((@{Necromancy_Rank} + @{intelligence} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Necromancy_Rank} + @{intelligence} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Observe</td>
@@ -982,6 +1170,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Observe_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Observe_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_ObserveRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Observe}} {{roll=[[((@{Observe_Rank} + @{perception} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Observe_Rank} + @{perception} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Persuade</td>
@@ -996,6 +1188,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Persuade_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Persuade_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_PersuadeRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Persuade}} {{roll=[[((@{Persuade_Rank} + ?{Which characteristic?|Strength,@{strength}|Personality,@{personality}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Persuade_Rank} + ?{Which characteristic?|Strength,@{strength}|Personality,@{personality}} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td><input class="sheet-item" name="attr_Profession1" placeholder="Profession"
@@ -1011,6 +1207,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Profession1_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Profession1_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_Profession1Roll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll @{Profession1}}} {{roll=[[((@{Profession1_Rank} + ?{Which characteristic?|Strength,@{strength}|Endurance,@{endurance}|Agility,@{agility}|Intelligence,@{intelligence}|Willpower,@{willpower}|Perception,@{perception}|Personality,@{personality}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Profession1_Rank} + ?{Which characteristic?|Strength,@{strength}|Endurance,@{endurance}|Agility,@{agility}|Intelligence,@{intelligence}|Willpower,@{willpower}|Perception,@{perception}|Personality,@{personality}} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td><input class="sheet-item" name="attr_Profession2" placeholder="Profession"
@@ -1026,6 +1226,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Profession2_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Profession2_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_Profession2Roll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll @{Profession2}}} {{roll=[[((@{Profession2_Rank} + ?{Which characteristic?|Strength,@{strength}|Endurance,@{endurance}|Agility,@{agility}|Intelligence,@{intelligence}|Willpower,@{willpower}|Perception,@{perception}|Personality,@{personality}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Profession2_Rank} + ?{Which characteristic?|Strength,@{strength}|Endurance,@{endurance}|Agility,@{agility}|Intelligence,@{intelligence}|Willpower,@{willpower}|Perception,@{perception}|Personality,@{personality}} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td><input class="sheet-item" name="attr_Profession3" placeholder="Profession"
@@ -1041,6 +1245,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Profession3_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Profession3_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_Profession3Roll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll @{Profession3}}} {{roll=[[((@{Profession3_Rank} + ?{Which characteristic?|Strength,@{strength}|Endurance,@{endurance}|Agility,@{agility}|Intelligence,@{intelligence}|Willpower,@{willpower}|Perception,@{perception}|Personality,@{personality}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Profession3_Rank} + ?{Which characteristic?|Strength,@{strength}|Endurance,@{endurance}|Agility,@{agility}|Intelligence,@{intelligence}|Willpower,@{willpower}|Perception,@{perception}|Personality,@{personality}} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Restoration</td>
@@ -1055,6 +1263,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Restoration_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Restoration_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_RestorationRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Restoration}} {{roll=[[((@{Restoration_Rank} + @{willpower} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Restoration_Rank} + @{willpower} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Ride</td>
@@ -1069,6 +1281,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Ride_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Ride_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_RideRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Ride}} {{roll=[[((@{Ride_Rank} + @{agility} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Ride_Rank} + @{agility} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Shehai Shen She Ru</td>
@@ -1083,6 +1299,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Shehai_Shen_She_Ru_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Shehai_Shen_She_Ru_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_Shehai_Shen_She_RuRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Shehai Shen She Ru}} {{roll=[[((@{Shehai_Shen_She_Ru_Rank} + ?{Which characteristic?|Strength,@{strength}|Agility,@{agility}|Willpower,@{willpower}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Shehai_Shen_She_Ru_Rank} + ?{Which characteristic?|Strength,@{strength}|Agility,@{agility}|Willpower,@{willpower}} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Stealth</td>
@@ -1097,6 +1317,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Stealth_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Stealth_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_StealthRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Stealth}} {{roll=[[((@{Stealth_Rank} + ?{Which characteristic?|Agility,@{agility}|Perception,@{perception}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Stealth_Rank} + ?{Which characteristic?|Agility,@{agility}|Perception,@{perception}} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Subterfuge</td>
@@ -1111,6 +1335,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Subterfuge_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Subterfuge_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_SubterfugeRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Subterfuge}} {{roll=[[((@{Subterfuge_Rank} + ?{Which characteristic?|Agility,@{agility}|Intelligence,@{intelligence}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Subterfuge_Rank} + ?{Which characteristic?|Agility,@{agility}|Intelligence,@{intelligence}} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Survival</td>
@@ -1125,6 +1353,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Survival_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Survival_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_SurvivalRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Survival}} {{roll=[[((@{Survival_Rank} + ?{Which characteristic?|Intelligence,@{intelligence}|Perception,@{perception}} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Survival_Rank} + ?{Which characteristic?|Intelligence,@{intelligence}|Perception,@{perception}} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Th'uum</td>
@@ -1139,6 +1371,10 @@
                                 </select></td>
                                 <td><input class="sheet-item" name="attr_Thuum_Bonus" type="text"></td>
                                 <td><input class="sheet-item" name="attr_Thuum_Base_TN" type="text"></td>
+                                <td>
+                                    <button name="roll_ThuumRoll" type="roll"
+                                            value="&{template:skills} {{rollname=Roll Thuum}} {{roll=[[((@{Thuum_Rank} + @{willpower} + ?{Modifier|0}) - 1d100cs<@{Luck_P_Max}cf>@{Luck_Fail}) / 10]]}} {{target=[[@{Thuum_Rank} + @{willpower} + ?{Modifier|0}]]}}"></button>
+                                </td>
                             </tr>
                         </table>
                     </div> <!-- right outer col -->
@@ -1159,13 +1395,16 @@
 </div> <!-- characteristics aka sheet end -->
 
 <!--Roll Template test-->
-<rolltemplate class="sheet-rolltemplate-test">
+<rolltemplate class="sheet-rolltemplate-skills">
     <table>
-        <tr><th>{{rollname}}</th></tr>
+        <tr>
+            <th>{{rollname}}</th>
+        </tr>
         <td><img src="http://i.imgur.com/g1SVcwZ.png" height="100%" width="auto" max-width="100px"></td>
         {{#target}}
         <tr>
-            <td><span class="tcat">Target: </span>{{target}}</td></tr>
+            <td><span class="tcat">Target: </span>{{target}}</td>
+        </tr>
         {{/target}}
         {{#rollGreater() roll 0}}
         <tr>
